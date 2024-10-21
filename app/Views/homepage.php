@@ -3,858 +3,788 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Makaan - Real Estate HTML Template</title>
+    <title>EcoHarmony Homes</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <!-- Libraries Stylesheet -->
-    <link href="assets/libs/animate/animate.min.css" rel="stylesheet">
     <link href="assets/libs/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/libs/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="assets/libs/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="assests/css/style.css" rel="stylesheet">
+    <link href="assets\css\style.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
 
-
-        <!-- Navbar Start -->
-        <div class="container-fluid nav-bar bg-transparent">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
-                    <div class="icon p-2 me-2">
-                        <img class="img-fluid" src="assets\images\ecoharmonyhomes.png" alt="Icon" style="width: 30px; height: 30px;">
-                    </div>
-                    <h1 class="m-0 text-primary">EcoHarmony Homes</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">Services</a>
-                        <a href="about.html" class="nav-item nav-link">About us</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="" class="btn btn-primary px-3 d-none d-lg-flex">LogIn</a>
-                </div>
-            </nav>
-        </div>
-        <!-- Navbar End -->
-
-
-        <!-- Header Start -->
-        <div class="container-fluid header bg-white p-0">
-            <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-                <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-4">Find A <span class="text-primary">Perfect Home</span> To Live With Your Family</h1>
-                    <p class="animated fadeIn mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet
-                        sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                    <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
-                </div>
-                <div class="col-md-6 animated fadeIn">
-                    <div class="owl-carousel header-carousel">
-                        <div class="owl-carousel-item">
-                            <img class="img-fluid" src="assets\images\ac2d785c02afa52c58ce8f4582258717.jpg" alt="">
-                        </div>
-                        <div class="owl-carousel-item">
-                            <img class="img-fluid" src="assets\images\architecture-house-modern-wallpaper-preview.jpg" alt="">
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
+        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>EcoHarmony Homes</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Projects</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="project.html" class="dropdown-item">Landsell</a>
+                            <a href="team.html" class="dropdown-item">Architecture Design</a>
+                            <a href="testimonial.html" class="dropdown-item">Construction</a>
+                            <a href="blog.html" class="dropdown-item">Matirial Suplliers</a>
+                            <a href="detail.html" class="dropdown-item">Painting</a>
                         </div>
                     </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">LogIn <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
-        </div>
-        <!-- Header End -->
-
-        <!-- Category Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Property Types</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-apartment.png" alt="Icon">
-                                </div>
-                                <h6>Apartment</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div>
-                                <h6>Villa</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-house.png" alt="Icon">
-                                </div>
-                                <h6>Home</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
-                                </div>
-                                <h6>Office</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-building.png" alt="Icon">
-                                </div>
-                                <h6>Building</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-neighborhood.png" alt="Icon">
-                                </div>
-                                <h6>Townhouse</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-condominium.png" alt="Icon">
-                                </div>
-                                <h6>Shop</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-luxury.png" alt="Icon">
-                                </div>
-                                <h6>Garage</h6>
-                                <span>123 Properties</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Category End -->
-
-
-        <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="img/about.jpg">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="mb-4">#1 Place To Find The Perfect Property</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Clita duo justo magna dolore erat amet</p>
-                        <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
-
-
-        <!-- Property List Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-0 gx-5 align-items-end">
-                    <div class="col-lg-6">
-                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                            <h1 class="mb-3">Property Listing</h1>
-                            <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit diam justo sed rebum.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-                        <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-                            <li class="nav-item me-2">
-                                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1">Featured</a>
-                            </li>
-                            <li class="nav-item me-2">
-                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">For Sell</a>
-                            </li>
-                            <li class="nav-item me-0">
-                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-3">For Rent</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-2.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-3.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Office</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-4.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Building</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-5.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Home</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-6.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Shop</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                                <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-2" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-2.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-3.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Office</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-4.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Building</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-5.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Home</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-6.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Shop</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-2.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-3.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Office</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-4.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Building</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-5.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Home</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-6.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Shop</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Property List End -->
-
-
-        <!-- Call to Action Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="bg-light rounded p-3">
-                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                                <img class="img-fluid rounded w-100" src="img/call-to-action.jpg" alt="">
-                            </div>
-                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="mb-4">
-                                    <h1 class="mb-3">Contact With Our Certified Agent</h1>
-                                    <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p>
-                                </div>
-                                <a href="" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Make A Call</a>
-                                <a href="" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Get Appoinment</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Call to Action End -->
-
-
-        <!-- Team Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Property Agents</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Our Clients Say!</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                            <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-1.jpg" style="width: 45px; height: 45px;">
-                                <div class="ps-3">
-                                    <h6 class="fw-bold mb-1">Client Name</h6>
-                                    <small>Profession</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                            <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-2.jpg" style="width: 45px; height: 45px;">
-                                <div class="ps-3">
-                                    <h6 class="fw-bold mb-1">Client Name</h6>
-                                    <small>Profession</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                            <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg" style="width: 45px; height: 45px;">
-                                <div class="ps-3">
-                                    <h6 class="fw-bold mb-1">Client Name</h6>
-                                    <small>Profession</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-        
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Quick Links</h5>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Photo Gallery</h5>
-                        <div class="row g-2 pt-2">
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/property-1.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/property-2.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/property-3.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/property-4.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/property-5.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/property-6.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        </nav>
     </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="assets\images\ac2d785c02afa52c58ce8f4582258717.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block"></i>
+                            <h1 class="display-2 text-uppercase text-white mb-md-4">Build Your Dream House With Us</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Get A Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="assets\images\architecture-house-modern-wallpaper-preview.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <i class="fa fa-tools fa-4x text-primary mb-4 d-none d-sm-block"></i>
+                            <h1 class="display-2 text-uppercase text-white mb-md-4">We Are Trusted For Your Project</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+   <!-- Main Content Section -->
+   <div class="container mt-5">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                
+                <p>
+                    At EcoHarmony Homes, we believe that sustainable living should never compromise on style or comfort. Our collection of sustainable home designs combines cutting-edge architecture with eco-friendly materials to create beautiful spaces that minimize environmental impact. Each design incorporates energy-efficient features such as solar panels, high-quality insulation, and water conservation systems, ensuring that your home not only looks good but also contributes positively to the planet.
+                </p>
+                <p>
+                    Explore our innovative layouts that prioritize natural light, airflow, and outdoor connectivity, creating a serene living environment that promotes well-being. From compact urban dwellings to spacious family homes, our designs cater to diverse lifestyles while fostering a harmonious relationship with the environment.
+                </p>
+            </div>
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div id="designCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets\images\eco-house.jpg" class="d-block w-100" alt="Eco-Friendly Cottage">
+                            <div class="carousel-caption d-none d-md-block">
+                                
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets\images\Eco Friendly Interior Design.jpg" class="d-block w-100" alt="Modern Minimalist Home">
+                            <div class="carousel-caption d-none d-md-block">
+                                
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets\images\eco_friendly_sky_garden_home5.jpg" class="d-block w-100" alt="Family Haven">
+                            <div class="carousel-caption d-none d-md-block">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#designCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#designCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Designs Section -->
+    <div class="container mt-5">
+        <h2 class="text-center">Featured Sustainable Designs</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="path/to/design1.jpg" class="card-img-top" alt="Design 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Design 1</h5>
+                        <p class="card-text">A brief description of Design 1 highlighting its features.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="path/to/design2.jpg" class="card-img-top" alt="Design 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Design 2</h5>
+                        <p class="card-text">A brief description of Design 2 highlighting its features.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="path/to/design3.jpg" class="card-img-top" alt="Design 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Design 3</h5>
+                        <p class="card-text">A brief description of Design 3 highlighting its features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="portfolio.html" class="btn btn-primary">Explore More Designs</a>
+        </div>
+    </div>
+    
+    <!-- About End -->
+    
+
+    <!-- Services Start -->
+    <div class="container-fluid bg-light py-6 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4">We Provide <span class="text-primary">The Best</span> Services</h1>
+        </div>
+        <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-1.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-map text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Property</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-1.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-cubes text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Matirieal Supplier</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-1.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-hard-hat text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Construction</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-2.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-pencil-ruler text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Planning & Design</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-3.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-drafting-compass text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Architecture Design</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-4.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-palette text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Interior Design</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-5.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-tools text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Fixing & Support</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-6.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-paint-brush text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Painting</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-6.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-seedling text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Garden Design</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-6.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-couch text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Fernitures</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-6.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-tv text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Electrics</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid" src="img/service-6.jpg" alt="">
+                    <div class="service-icon bg-white">
+                        <i class="fa fa-3x fa-home text-primary"></i>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-uppercase mb-3">Dream Homes</h4>
+                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Portfolio Start -->
+    <div class="container-fluid bg-light py-6 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4">Some Of Our <span class="text-primary">Popular</span> Dream Projects</h1>
+        </div>
+        <div class="row gx-5">
+            <div class="col-12 text-center">
+                <div class="d-inline-block bg-dark-radial text-center pt-4 px-5 mb-5">
+                    <ul class="list-inline mb-0" id="portfolio-flters">
+                        <li class="btn btn-outline-primary bg-white p-2 active mx-2 mb-4" data-filter="*">
+                            <img src="img/portfolio-1.jpg" style="width: 150px; height: 100px;">
+                            <div class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center" style="background: rgba(4, 15, 40, .3);">
+                                <h6 class="text-white text-uppercase m-0">All</h6>
+                            </div>
+                        </li>
+                        <li class="btn btn-outline-primary bg-white p-2 mx-2 mb-4" data-filter=".first">
+                            <img src="img/portfolio-2.jpg" style="width: 150px; height: 100px;">
+                            <div class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center" style="background: rgba(4, 15, 40, .3);">
+                                <h6 class="text-white text-uppercase m-0">Construction</h6>
+                            </div>
+                        </li>
+                        <li class="btn btn-outline-primary bg-white p-2 mx-2 mb-4" data-filter=".second">
+                            <img src="img/portfolio-3.jpg" style="width: 150px; height: 100px;">
+                            <div class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center" style="background: rgba(4, 15, 40, .3);">
+                                <h6 class="text-white text-uppercase m-0">Renovation</h6>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5 portfolio-container">
+            <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
+                <div class="position-relative portfolio-box">
+                    <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
+                    <a class="portfolio-title shadow-sm" href="">
+                        <p class="h4 text-uppercase">Project Name</p>
+                        <span class="text-body"><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</span>
+                    </a>
+                    <a class="portfolio-btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">
+                        <i class="bi bi-plus text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item second">
+                <div class="position-relative portfolio-box">
+                    <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
+                    <a class="portfolio-title shadow-sm" href="">
+                        <p class="h4 text-uppercase">Project Name</p>
+                        <span class="text-body"><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</span>
+                    </a>
+                    <a class="portfolio-btn" href="img/portfolio-2.jpg" data-lightbox="portfolio">
+                        <i class="bi bi-plus text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
+                <div class="position-relative portfolio-box">
+                    <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
+                    <a class="portfolio-title shadow-sm" href="">
+                        <p class="h4 text-uppercase">Project Name</p>
+                        <span class="text-body"><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</span>
+                    </a>
+                    <a class="portfolio-btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">
+                        <i class="bi bi-plus text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item second">
+                <div class="position-relative portfolio-box">
+                    <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
+                    <a class="portfolio-title shadow-sm" href="">
+                        <p class="h4 text-uppercase">Project Name</p>
+                        <span class="text-body"><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</span>
+                    </a>
+                    <a class="portfolio-btn" href="img/portfolio-4.jpg" data-lightbox="portfolio">
+                        <i class="bi bi-plus text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
+                <div class="position-relative portfolio-box">
+                    <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
+                    <a class="portfolio-title shadow-sm" href="">
+                        <p class="h4 text-uppercase">Project Name</p>
+                        <span class="text-body"><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</span>
+                    </a>
+                    <a class="portfolio-btn" href="img/portfolio-5.jpg" data-lightbox="portfolio">
+                        <i class="bi bi-plus text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item second">
+                <div class="position-relative portfolio-box">
+                    <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
+                    <a class="portfolio-title shadow-sm" href="">
+                        <p class="h4 text-uppercase">Project Name</p>
+                        <span class="text-body"><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</span>
+                    </a>
+                    <a class="portfolio-btn" href="img/portfolio-6.jpg" data-lightbox="portfolio">
+                        <i class="bi bi-plus text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-6 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4">We Are <span class="text-primary">Professional & Expert</span> Workers</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="row g-0">
+                    <div class="col-10" style="min-height: 300px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="img/team-1.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
+                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-light p-4">
+                            <h4 class="text-uppercase">Adam Phillips</h4>
+                            <span>CEO & Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="row g-0">
+                    <div class="col-10" style="min-height: 300px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="img/team-2.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
+                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-light p-4">
+                            <h4 class="text-uppercase">Dylan Adams</h4>
+                            <span>Civil Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="row g-0">
+                    <div class="col-10" style="min-height: 300px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="img/team-3.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
+                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-light p-4">
+                            <h4 class="text-uppercase">Jhon Doe</h4>
+                            <span>Interior Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="row g-0">
+                    <div class="col-10" style="min-height: 300px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="img/team-4.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
+                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-light p-4">
+                            <h4 class="text-uppercase">Josh Dunn</h4>
+                            <span>Painter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid bg-light py-6 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4">What Our <span class="text-primary">Happy Cleints</span> Say!!!</h1>
+        </div>
+        <div class="row gx-0 align-items-center">
+            <div class="col-xl-4 col-lg-5 d-none d-lg-block">
+                <img class="img-fluid w-100 h-100" src="img/testimonial.jpg">
+            </div>
+            <div class="col-xl-8 col-lg-7 col-md-12">
+                <div class="testimonial bg-light">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="row gx-4 align-items-center">
+                            <div class="col-xl-4 col-lg-5 col-md-5">
+                                <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0" src="img/testimonial-1.jpg" alt="">
+                            </div>
+                            <div class="col-xl-8 col-lg-7 col-md-7">
+                                <h4 class="text-uppercase mb-0">Client Name</h4>
+                                <p>Profession</p>
+                                <p class="fs-5 mb-0"><i class="fa fa-2x fa-quote-left text-primary me-2"></i> Dolores sed duo
+                                    clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem
+                                    lorem magna ut labore et tempor diam tempor erat. Erat dolor rebum sit
+                                    ipsum.</p>
+                            </div>
+                        </div>
+                        <div class="row gx-4 align-items-center">
+                            <div class="col-xl-4 col-lg-5 col-md-5">
+                                <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0" src="img/testimonial-2.jpg" alt="">
+                            </div>
+                            <div class="col-xl-8 col-lg-7 col-md-7">
+                                <h4 class="text-uppercase mb-0">Client Name</h4>
+                                <p>Profession</p>
+                                <p class="fs-5 mb-0"><i class="fa fa-2x fa-quote-left text-primary me-2"></i> Dolores sed duo
+                                    clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem
+                                    lorem magna ut labore et tempor diam tempor erat. Erat dolor rebum sit
+                                    ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-6 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4">Latest <span class="text-primary">Articles</span> From Our Blog Post</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="bg-light">
+                    <img class="img-fluid" src="img/blog-1.jpg" alt="">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle me-2" src="img/user.jpg" width="35" height="35" alt="">
+                                <span>John Doe</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="ms-3"><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</span>
+                            </div>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Rebum diam clita lorem erat magna est erat</h4>
+                        <a class="text-uppercase fw-bold" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="bg-light">
+                    <img class="img-fluid" src="img/blog-2.jpg" alt="">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle me-2" src="img/user.jpg" width="35" height="35" alt="">
+                                <span>John Doe</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="ms-3"><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</span>
+                            </div>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Rebum diam clita lorem erat magna est erat</h4>
+                        <a class="text-uppercase fw-bold" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="bg-light">
+                    <img class="img-fluid" src="img/blog-3.jpg" alt="">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle me-2" src="img/user.jpg" width="35" height="35" alt="">
+                                <span>John Doe</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="ms-3"><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</span>
+                            </div>
+                        </div>
+                        <h4 class="text-uppercase mb-3">Rebum diam clita lorem erat magna est erat</h4>
+                        <a class="text-uppercase fw-bold" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+      
+
+    <!-- Footer Start -->
+    <div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
+        <div class="row g-5">
+            <div class="col-lg-6 pe-lg-5">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>EcoHarmony Homes</h1>
+                </a>
+                <p>Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy. Tempor sea ipsum diam  sed clita dolore eos dolores magna erat dolore sed stet justo et dolor.</p>
+                <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
+                <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <div class="row g-5">
+                    <div class="col-sm-6">
+                        <h4 class="text-white text-uppercase mb-4">Quick Links</h4>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Our Services</a>
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
+                            <a class="text-white-50" href="#"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4 class="text-white text-uppercase mb-4">Popular Links</h4>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Our Services</a>
+                            <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
+                            <a class="text-white-50" href="#"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <h4 class="text-white text-uppercase mb-4">Newsletter</h4>
+                        <div class="w-100">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-light" style="padding: 20px 30px;" placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark bg-light-radial text-white border-top border-primary px-0">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div class="py-4 px-5 text-center text-md-start">
+                <p class="mb-0">&copy; <a class="text-primary" href="#">EcoHarmony Homes</a>. All Rights Reserved.</p>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

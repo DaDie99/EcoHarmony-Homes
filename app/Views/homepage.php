@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="utf-8">
@@ -77,8 +76,8 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block"></i>
-                            <h1 class="display-2 text-uppercase text-white mb-md-4">Build Your Dream House With Us</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Get A Quote</a>
+                            <h1 class="display-2 text-uppercase text-white mb-md-4">Build Your Dream House With Our Services</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Find A service</a>
                         </div>
                     </div>
                 </div>
@@ -87,8 +86,8 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <i class="fa fa-tools fa-4x text-primary mb-4 d-none d-sm-block"></i>
-                            <h1 class="display-2 text-uppercase text-white mb-md-4">We Are Trusted For Your Project</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Contact Us</a>
+                            <h1 class="display-2 text-uppercase text-white mb-md-4">We Are Trusted to Build your dream home with our services</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Find A service</a>
                         </div>
                     </div>
                 </div>
@@ -164,7 +163,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="path/to/design1.jpg" class="card-img-top" alt="Design 1">
+                    <img src="assets\images\GreenHouse.jpg" class="card-img-top" alt="Design 1">
                     <div class="card-body">
                         <h5 class="card-title">Design 1</h5>
                         <p class="card-text">A brief description of Design 1 highlighting its features.</p>
@@ -173,7 +172,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="path/to/design2.jpg" class="card-img-top" alt="Design 2">
+                    <img src="assets\images\OIP.jfif" class="card-img-top" alt="Design 2">
                     <div class="card-body">
                         <h5 class="card-title">Design 2</h5>
                         <p class="card-text">A brief description of Design 2 highlighting its features.</p>
@@ -212,8 +211,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Property</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p>Our Property Selling and Buying Service offers a seamless experience for homeowners and buyers alike. Whether you're selling your home or searching for your dream property, we provide expert guidance, market insights, and personalized support at every step. Our dedicated team helps sellers achieve the best price and ensures buyers find properties that meet their needs and budget. With extensive listings, professional evaluations, and negotiation support, we simplify the process and make real estate transactions stress-free, transparent, and efficient. Let us help you unlock the best opportunities in today's property market!</p>
+                        <a class="btn text-primary" href="">Find a Property</a>
                     </div>
                 </div>
             </div>
@@ -228,9 +227,9 @@
                         <i class="fa fa-3x fa-cubes text-primary"></i>
                     </div>
                     <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">Matirieal Supplier</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <h4 class="text-uppercase mb-3">Material Supplier</h4>
+                        <p>Material Supplier Service ensures that you have access to high-quality construction materials for your building projects, delivered on time and within budget. We provide a wide range of materials, from sustainable wood and eco-friendly insulation to high-grade concrete and steel, sourced from trusted suppliers. Whether you're working on a residential, commercial, or industrial project, our team is committed to delivering reliable products, tailored to your specific needs. With competitive pricing, timely delivery, and exceptional customer service, we make sure your project stays on track and meets the highest standards of quality.</p>
+                        <a class="btn text-primary" href="">Find a Material Suppplier</a>
                     </div>
                 </div>
             </div>
@@ -244,8 +243,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Construction</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p>Construction Service provides comprehensive solutions for residential, commercial, and industrial projects. From planning and design to execution and final inspection, we manage every stage of the construction process with precision and professionalism. We offer services such as new builds and project management, ensuring that all work is completed on time, within budget, and to the highest quality standards. Our skilled team of architects, engineers, and builders use the latest construction techniques and materials, focusing on safety, sustainability, and client satisfaction. Let us bring your vision to life with reliable and expert construction services.</p>
+                        <a class="btn text-primary" href="">Find a Construction</a>
                     </div>
                 </div>
             </div>
@@ -257,8 +256,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Planning & Design</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p>Planning & Design Service ensures that every construction project begins with a solid foundation. We work closely with clients to create tailored designs that meet their vision while adhering to zoning regulations, environmental considerations, and budget constraints. Our team of skilled architects and designers uses advanced tools to craft functional, aesthetically pleasing spaces. Whether it's residential, commercial, or industrial, we focus on optimizing layout, maximizing efficiency, and integrating sustainable features. By collaborating from concept to blueprint, we ensure a seamless transition from planning to execution, delivering projects that are innovative, practical, and sustainable.</p>
+                        <a class="btn text-primary" href="">Find a planning & design</a>
                     </div>
                 </div>
             </div>
@@ -270,8 +269,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Architecture Design</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p> Architecture Design Service combines creativity with functionality to deliver exceptional building designs tailored to your unique needs. We focus on blending aesthetic appeal with structural integrity, ensuring each design complements its environment while maximizing space and light. Our experienced architects work closely with clients to understand their vision, creating innovative, sustainable, and energy-efficient designs. Whether designing modern homes, commercial spaces, or urban developments, we prioritize materials, safety, and regulatory compliance. Using cutting-edge technology, we bring ideas to life through detailed blueprints and 3D visualizations, guiding projects from concept to construction with precision and creativity.</p>
+                        <a class="btn text-primary" href="">Find a Architecture Design</a>
                     </div>
                 </div>
             </div>
@@ -283,8 +282,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Interior Design</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p>Interior Design Service transforms spaces into functional, aesthetically pleasing environments that reflect your style and meet your practical needs. Whether designing for homes, offices, or commercial spaces, we focus on balancing beauty with comfort and utility. Our team of skilled designers curates materials, colors, furnishings, and layouts that enhance the flow and feel of each space. From modern minimalist styles to cozy, eco-friendly designs, we tailor each project to your vision. By incorporating the latest trends, sustainable materials, and innovative solutions, we create interiors that are not only visually stunning but also timeless and functional, ensuring the final result is both stunning and perfectly suited to your needs.</p>
+                        <a class="btn text-primary" href="">Find a Interior Design</a>
                     </div>
                 </div>
             </div>
@@ -296,8 +295,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Fixing & Support</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p> Fixing and Support Service ensures that all installations, from structural elements to interior fixtures, are expertly handled and securely fitted. We provide professional support during and after installation, ensuring every component functions correctly and meets safety standards. Whether it’s plumbing, electrical systems, or custom fittings, our skilled team offers timely and reliable solutions to address any issues that may arise. Post-installation, we offer ongoing support and maintenance to keep your space in optimal condition, providing peace of mind and ensuring long-lasting quality in all aspects of your project.</p>
+                        <a class="btn text-primary" href="">Find a Fixing & Support</a>
                     </div>
                 </div>
             </div>
@@ -309,8 +308,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Painting</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p>Painting Service brings new life to your space with professional, high-quality finishes for both interior and exterior surfaces. We use premium, eco-friendly paints that ensure durability and vibrant color while protecting your walls from wear and tear. Our experienced painters pay close attention to detail, providing smooth, even coats with precision in every brushstroke. Whether you're looking for a fresh look, a bold statement, or a subtle finish, we offer a wide range of colors and styles to suit your preferences. We also handle surface preparation and cleanup, ensuring a flawless and hassle-free painting experience.</p>
+                        <a class="btn text-primary" href="">Find a Painting</a>
                     </div>
                 </div>
             </div>
@@ -324,8 +323,8 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Garden Design</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
-                        <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p> Garden Design Service transforms outdoor spaces into beautiful, functional, and sustainable landscapes. We create tailored garden layouts that blend aesthetics with the natural environment, ensuring harmony between architecture and nature. Whether you're envisioning a serene retreat, or a low-maintenance eco-garden, our expert designers work closely with you to bring your ideas to life. From plant selection and hardscaping to irrigation systems and lighting, every element is carefully planned to suit your style and enhance your outdoor living experience. Our focus on sustainability ensures that your garden thrives while being environmentally friendly.</p>
+                        <a class="btn text-primary" href="">Find a Garden Design</a>
                     </div>
                 </div>
             </div>
@@ -338,7 +337,7 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Fernitures</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <p>Furniture Service offers a curated selection of high-quality, stylish furnishings to enhance any space. We specialize in providing custom and ready-made pieces that blend functionality with aesthetic appeal, ensuring each item complements your interior design vision. Whether you’re looking for contemporary, traditional, or eclectic styles, our range includes everything from sofas and chairs to tables and storage solutions. We also provide personalized consultations to help you select the perfect furniture that fits your lifestyle, space, and budget. With a focus on craftsmanship and durability, we ensure that every piece not only looks great but stands the test of time.</p>
                         <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -352,7 +351,7 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Electrics</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <p> Electrical Service delivers comprehensive solutions for all your electrical needs, ensuring safety, efficiency, and reliability. We specialize in installation, maintenance, and repairs, covering everything from lighting and wiring to circuit breakers and electrical panels. Our licensed electricians are trained to adhere to the highest safety standards, providing thorough inspections and troubleshooting to prevent potential hazards. Whether upgrading fixtures or implementing energy-efficient solutions, we offer tailored advice and solutions to meet your specific requirements.we ensure your electrical systems operate seamlessly and safely.</p>
                         <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -366,7 +365,7 @@
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Dream Homes</h4>
-                        <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
+                        <p>Our **Dream Homes Service** is dedicated to turning your vision of the perfect home into reality. We understand that a dream home is not just about aesthetics; it’s a reflection of your lifestyle, values, and aspirations. Our team of architects, designers, and builders collaborates with you from the initial concept to the final touches, ensuring every detail aligns with your desires. Whether you envision a modern minimalist retreat, a cozy cottage, or a luxurious family estate, we provide personalized solutions that prioritize comfort, functionality, and sustainability. With our expertise, your dream home will be a beautiful sanctuary tailored to your unique needs.</p>
                         <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>

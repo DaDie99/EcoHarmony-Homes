@@ -1,5 +1,4 @@
 
-
 <head>
     <meta charset="utf-8">
     <title>EcoHarmony Homes</title>
@@ -47,17 +46,8 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="#" class="nav-item nav-link active">Home</a>
                     <a href="<?= site_url('about') ?>" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Projects</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="project.html" class="dropdown-item">Landsell</a>
-                            <a href="team.html" class="dropdown-item">Architecture Design</a>
-                            <a href="testimonial.html" class="dropdown-item">Construction</a>
-                            <a href="blog.html" class="dropdown-item">Matirial Suplliers</a>
-                            <a href="detail.html" class="dropdown-item">Painting</a>
-                        </div>
-                    </div>
+                    <a href="<?= site_url('projects') ?>" class="nav-item nav-link">Projects</a>
+                    <a href="<?= site_url('services') ?>" class="nav-item nav-link">Services</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <a href="" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">LogIn <i class="bi bi-arrow-right"></i></a>
                 </div>

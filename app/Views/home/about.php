@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <base href="<?= base_url() ?>/">
+
 
     <meta charset="UTF-8">
     <title>About Us - EcoHarmony Homes</title>
@@ -10,16 +12,26 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Fonts -->
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet"> <!-- Your custom styles should load after Bootstrap -->
+
+    <!-- Libraries Stylesheet -->
+    <link href="assets/libs/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/libs/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="assets/libs/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="assets\css\style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -35,19 +47,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.php" class="nav-item nav-link">Home</a>
-                    <a href="about.php" class="nav-item nav-link active">About</a>
-                    <a href="service.php" class="nav-item nav-link">Projects</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="landsell.php" class="dropdown-item">Land Selling</a>
-                            <a href="architecture.php" class="dropdown-item">Architecture Design</a>
-                            <a href="construction.php" class="dropdown-item">Construction</a>
-                            <a href="materials.php" class="dropdown-item">Material Suppliers</a>
-                            <a href="painting.php" class="dropdown-item">Painting</a>
-                        </div>
-                    </div>
+                    <a href="#" class="nav-item nav-link">Home</a>
+                    <a href="<?= site_url('about') ?>" class="nav-item nav-link">About</a>
+                    <a href="<?= site_url('projects') ?>" class="nav-item nav-link">Projects</a>
+                    <a href="<?= site_url('services') ?>" class="nav-item nav-link">Services</a>
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
                     <a href="login.php" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">LogIn <i class="bi bi-arrow-right"></i></a>
                 </div>
@@ -56,24 +59,104 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- About Section Start -->
-    <div class="container-fluid bg-dark text-white py-5" style="background-image: url('img/about-bg.jpg'); background-size: cover; background-position: center;">
-        <div class="container py-5">
-            <h1 class="display-3 text-uppercase text-center mb-4">About Us</h1>
-            <p class="lead text-center mb-5">At EcoHarmony Homes, we are committed to creating sustainable and eco-friendly homes that meet modern-day living standards. Our expertise lies in designing, constructing, and delivering high-quality homes that harmonize with the environment.</p>
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <h3 class="text-uppercase mb-3">Our Mission</h3>
-                    <p>Our mission is to build homes that are not only beautiful and functional but also environmentally responsible. We use sustainable materials, eco-friendly practices, and innovative designs to minimize our impact on the planet.</p>
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-6 px-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <h1 class="display-5 text-uppercase mb-4">We are <span class="text-primary">Best Services</span> Provider to buildup your dream home</h1>
+                <h4 class="text-uppercase mb-3 text-body">Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum tempor sit diam amet diam et eos labore</h4>
+                <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor</p>
+                <div class="row gx-5 py-2">
+                    <div class="col-sm-6 mb-2">
+                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Perfect Planning</p>
+                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Professional Workers</p>
+                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>First Working Process</p>
+                    </div>
+                    <div class="col-sm-6 mb-2">
+                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Perfect Planning</p>
+                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Professional Workers</p>
+                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>First Working Process</p>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="text-uppercase mb-3">Our Vision</h3>
-                    <p>We envision a future where every home is built with the earth in mind. EcoHarmony Homes strives to be a leader in green construction, setting new standards for sustainable living.</p>
+                <p class="mb-4">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos labore</p>
+                <img src="img/signature.jpg" alt="">
+            </div>
+            <div class="col-lg-5 pb-5" style="min-height: 400px;">
+                <div class="position-relative bg-dark-radial h-100 ms-5">
+                    <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="img/about.jpg" style="object-fit: cover;">
                 </div>
             </div>
         </div>
     </div>
-    <!-- About Section End -->
+    <!-- About End -->
+
+
+    <!-- Appointment Start -->
+    <div class="container-fluid bg-light py-6 px-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="mb-4">
+                    <h1 class="display-5 text-uppercase mb-4">Report a <span class="text-primary">Service Provider</span></h1>
+                </div>
+                <p class="mb-5">Nonumy ipsum amet tempor takimata vero ea elitr. Diam diam ut et eos duo duo sed. Lorem elitr sadipscing eos et ut et stet justo, sit dolore et voluptua labore. Ipsum erat et ea ipsum magna sadipscing lorem. Sit lorem sea sanctus eos. Sanctus sit tempor dolores ipsum stet justo sit erat ea, sed diam sanctus takimata sit. Et at voluptua amet erat justo amet ea ipsum eos, eirmod accusam sea sed ipsum kasd ut.</p>
+                <a class="btn btn-primary py-3 px-5" href="">Get A Quote</a>
+            </div>
+            <div class="col-lg-8">
+                <div class="bg-white text-center p-5">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="date" id="date" data-target-input="nearest">
+                                    <input type="text"
+                                        class="form-control bg-light border-0 datetimepicker-input"
+                                        placeholder="Call Back Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="time" id="time" data-target-input="nearest">
+                                    <input type="text"
+                                        class="form-control bg-light border-0 datetimepicker-input"
+                                        placeholder="Call Back Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control bg-light border-0" rows="5" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-6 px-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4"> <span class="text-primary">Top rated</span> Service Providers</h1>
+        </div>
+        
+    </div>
+    <!-- Team End -->
+
+
+
+
+
+
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

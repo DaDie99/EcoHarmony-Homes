@@ -49,7 +49,7 @@
                     <a href="<?= site_url('projects') ?>" class="nav-item nav-link">Projects</a>
                     <a href="<?= site_url('about') ?>" class="nav-item nav-link">About</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">LogIn <i class="bi bi-arrow-right"></i></a>
+                    <a href="<?= site_url('login') ?>" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">LogIn <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </nav>

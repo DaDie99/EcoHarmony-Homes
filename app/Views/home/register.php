@@ -139,11 +139,19 @@ body {
                 <label for="service">Service Provided</label>
                 <select name="service" id="service" required>
                     <option value="">Select a Service</option>
-                    <option value="Construction">Construction</option>
-                    <option value="Interior Design">Interior Design</option>
-                    <option value="Landscaping">Landscaping</option>
-                    <option value="Renovation">Renovation</option>
-                    <option value="Consulting">Consulting</option>
+                    <option value="property">Property</option>
+                    <option value="material supplier">Mateial Supplier</option>
+                    <option value="construction">Construction</option>
+                    <option value="planning & design">Planning & Design</option>
+                    <option value="architecture design">Architecture Design</option>
+                    <option value="interior design">Interior Design</option>
+                    <option value="Fixing & support">Fixing & Support</option>
+                    <option value="painting">Painting</option>
+                    <option value="garden design">Garden Design</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="electrics">Electricts</option>
+                    <option value="dream homes">Dream Homes</option>
+                    
                 </select>
             </div>
             <button type="submit" class="register-button">Register</button>

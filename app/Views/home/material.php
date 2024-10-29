@@ -6,7 +6,7 @@
 
 
     <meta charset="UTF-8">
-    <title>About Us - EcoHarmony Homes</title>
+    <title>Projects - EcoHarmony Homes</title>
 
 
     <!-- Favicon -->
@@ -32,6 +32,29 @@
 
     <!-- Template Stylesheet -->
     <link href="assets\css\style.css" rel="stylesheet">
+
+    <style>
+        /* Additional styling to match your site's theme */
+        .page-header {
+            background: linear-gradient(rgba(4, 15, 40, .7), rgba(4, 15, 40, .7)), url('img/materials-bg.jpg') center center no-repeat;
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .material-listing img {
+            border-radius: 8px;
+        }
+
+        .material-item {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -60,123 +83,76 @@
     <!-- Navbar End -->
 
 
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1 class="display-4">High-Quality Building Materials</h1>
+        <p>Reliable Materials for Every Project</p>
+    </div>
 
-    <!-- About Us Section Start -->
-    <section class="about-us py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <img src="assets/images/about-hero.jpg" alt="EcoHarmony Homes" class="img-fluid rounded shadow-sm">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="display-4 font-weight-bold text-primary mb-4">ECOHARMONY HOMES</h2>
-                    <p class="lead">At EcoHarmony Homes, we are driven by a mission to revolutionize sustainable living through exceptional design, innovation, and environmental stewardship. Our goal is to create eco-friendly homes that are as beautiful as they are sustainable, bringing the perfect harmony between modern living and nature.</p>
-                    <p>Founded with a vision to inspire a greener future, we pride ourselves on delivering high-quality, energy-efficient homes that minimize environmental impact and maximize comfort.</p>
-                    <a href="contact.php" class="btn btn-primary mt-3">Get in Touch</a>
-                </div>
+    <!-- Material Supplier Information Section -->
+    <section class="container py-5">
+        <div class="section-title text-center">
+            <h2 class="text-uppercase">Our Material Supplier Services</h2>
+            <p>We ensure that only the best materials are used for your building needs.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <p>EcoHarmony Homes is committed to providing top-quality construction materials. Our material supplier service offers a wide range of products to meet the needs of various projects, including residential, commercial, and industrial buildings.</p>
+                <p>From sustainable wood to high-grade steel, we source our materials from reputable suppliers to guarantee reliability, durability, and eco-friendliness. With us, you get competitive pricing, timely delivery, and exceptional customer service.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="img/material-supply.jpg" alt="Material Supplier" class="img-fluid rounded">
             </div>
         </div>
     </section>
-    <!-- About Us Section End -->
 
-    <!-- Service Providers Section Start -->
-    <section class="service-providers py-5 bg-light">
-        <div class="container">
-            <h2 class="display-5 font-weight-bold text-center text-dark mb-5">Meet Our Expert Service Providers</h2>
-            <div class="row">
-
-                <!-- Service Provider Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/images/service-landscape.jpg" class="card-img-top" alt="Landscape Design">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Landscaping & Design</h5>
-                            <p class="card-text">Our landscaping team specializes in creating lush, sustainable green spaces that not only beautify but also support local ecosystems.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Provider Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/images/service-architecture.jpg" class="card-img-top" alt="Architecture Design">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Architectural Design</h5>
-                            <p class="card-text">Our talented architects bring creative vision to life, designing eco-conscious structures that are both functional and inspiring.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Provider Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/images/service-construction.jpg" class="card-img-top" alt="Construction">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Construction & Engineering</h5>
-                            <p class="card-text">With precision and expertise, our construction team ensures every project is built to last, utilizing eco-friendly materials and techniques.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Provider Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/images/service-materials.jpg" class="card-img-top" alt="Material Suppliers">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Material Suppliers</h5>
-                            <p class="card-text">We partner with trusted suppliers to source sustainable and high-quality materials that meet our rigorous environmental standards.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Provider Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/images/service-painting.jpg" class="card-img-top" alt="Painting Services">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Painting & Finishing</h5>
-                            <p class="card-text">Our painters use low-VOC and eco-friendly paints, ensuring that your interiors are both beautiful and safe for the environment.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Material Listings Section -->
+    <section class="container py-5">
+        <div class="section-title text-center">
+            <h3 class="text-uppercase">Our Materials</h3>
+            <p>Explore our range of materials suitable for all types of construction projects.</p>
         </div>
-    </section>
-    <!-- Service Providers Section End -->
 
-    <!-- Our Values Section Start -->
-    <section class="our-values py-5">
-        <div class="container">
-            <h2 class="display-5 font-weight-bold text-center text-dark mb-5">Our Values</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="value-box text-center mb-4">
-                        <i class="bi bi-tree text-primary display-4"></i>
-                        <h4 class="my-3">Sustainability</h4>
-                        <p>We prioritize sustainable practices in every step, ensuring a positive impact on the planet.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="value-box text-center mb-4">
-                        <i class="bi bi-heart text-primary display-4"></i>
-                        <h4 class="my-3">Integrity</h4>
-                        <p>Our commitment to honesty and transparency is at the core of every project we undertake.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="value-box text-center mb-4">
-                        <i class="bi bi-lightbulb text-primary display-4"></i>
-                        <h4 class="my-3">Innovation</h4>
-                        <p>We embrace innovation to create homes that are forward-thinking and environmentally responsible.</p>
+        <div class="row">
+            <!-- Material 1 -->
+            <div class="col-lg-4 col-md-6 material-item">
+                <div class="card h-100 text-center">
+                    <img src="img/material-wood.jpg" alt="Sustainable Wood" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Sustainable Wood</h5>
+                        <p class="card-text">High-quality, eco-friendly wood sourced responsibly for sustainable construction projects.</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Material 2 -->
+            <div class="col-lg-4 col-md-6 material-item">
+                <div class="card h-100 text-center">
+                    <img src="img/material-concrete.jpg" alt="High-Grade Concrete" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">High-Grade Concrete</h5>
+                        <p class="card-text">Durable and versatile concrete mix, ideal for foundational and structural work.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Material 3 -->
+            <div class="col-lg-4 col-md-6 material-item">
+                <div class="card h-100 text-center">
+                    <img src="img/material-steel.jpg" alt="High-Quality Steel" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">High-Quality Steel</h5>
+                        <p class="card-text">Strong, reliable steel perfect for structural frameworks and other heavy-duty applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More materials can be added similarly -->
         </div>
     </section>
-    <!-- Our Values Section End -->
 
-
+  
     <!-- Footer Start -->
     <footer class="footer bg-dark text-light py-5">
         <div class="container">
@@ -252,17 +228,26 @@
     <!-- Footer End -->
 
 
-
-
-
-
-
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

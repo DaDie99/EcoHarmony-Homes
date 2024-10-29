@@ -292,6 +292,13 @@
     }
 }
 
+@media (min-width: 992px) {
+    .footer::after {
+        display: none; /* Hides the vertical line */
+    }
+}
+
+
 .footer-shape::before {
     position: absolute;
     content: "";

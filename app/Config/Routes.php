@@ -10,3 +10,12 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('about', 'AboutController::index');  // About page route
  $routes->get('projects', 'ProjectsController::index'); 
  $routes->get('services', 'ServicesController::index'); 
+ $routes->get('property', 'ServicesController::property');
+ $routes->get('material', 'ServicesController::material');
+ $routes->get('register', 'RegisterController::index');
+ $routes->post('register', 'RegisterController::create');
+ 
+
+ $routes->get('success', 'RegisterController::success');
+
+

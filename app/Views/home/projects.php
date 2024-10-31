@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->include('partials/navbar') ?>
+
 
 <head>
     <base href="<?= base_url() ?>/">
@@ -38,13 +38,16 @@
         .project-card {
             transition: transform 0.3s;
         }
+
         .project-card:hover {
             transform: scale(1.05);
         }
+
         .project-image {
             height: 250px;
             object-fit: cover;
         }
+
         .highlight-section {
             background-color: #f4f6f8;
             padding: 50px 0;
@@ -53,33 +56,6 @@
 </head>
 
 <body>
-
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0">
-            <a href="index.php" class="navbar-brand">
-                <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>EcoHarmony Homes</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="#" class="nav-item nav-link">Home</a>
-                    <a href="<?= site_url('services') ?>" class="nav-item nav-link">Services</a>
-                    <a href="<?= site_url('projects') ?>" class="nav-item nav-link">Projects</a>
-                    <a href="<?= site_url('about') ?>" class="nav-item nav-link">About</a>
-                    <a href="contact.php" class="nav-item nav-link">Contact</a>
-                    <a href="login.php" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">LogIn <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
-
-
-
-
 
     <body>
 
@@ -245,4 +221,4 @@
         <script src="js/main.js"></script>
     </body>
 
-</html>
+    </html>

@@ -30,23 +30,54 @@ class DashboardController extends BaseController
             return redirect()->to('/login')->with('error', 'Please log in first.');
         }
 
-        return view('dashboard', ['user' => $user]);
+        // Fetch user services
+        $serviceModel = new ServiceModel();
+        $services = $serviceModel->where('user_id', $user['user_id'])->findAll();
+
+        return view('dashboard', [
+            'user' => $user,
+            'services' => $services,
+            'serviceMapping' => $this->serviceMapping
+        ]);
     }
+
+    public function updateUser()
+    {
+        $user = session()->get('user_data');
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'Please log in first.');
+        }
+
+        $data = [
+            'companyName' => $this->request->getPost('companyName'),
+            'contactNumber' => $this->request->getPost('contactNumber'),
+        ];
+
+        $model = new UserModel();
+        if ($model->update($user['user_id'], $data)) {
+            $user['companyName'] = $data['companyName'];
+            $user['contactNumber'] = $data['contactNumber'];
+            session()->set('user_data', $user);
+
+            return redirect()->to('/home/dashboard')->with('message', 'Account details updated successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to update account details.');
+        }
+    }
+
     public function addService()
     {
         $user = session()->get('user_data');
-        $selectedServices = $this->request->getPost('services');  // Array of selected services
+        $selectedServices = $this->request->getPost('services'); 
 
-        // Update the user's services in the database
         $model = new UserModel();
-        $model->update($user['id'], [
+        $model->update($user['user_id'], [
             'service' => implode(',', $selectedServices)
         ]);
 
-        // Update session data
         $user['service'] = implode(',', $selectedServices);
         session()->set('user_data', $user);
 
-        return redirect()->to('home/dashboard')->with('message', 'Services updated successfully.');
+        return redirect()->to('/home/dashboard')->with('message', 'Services updated successfully.');
     }
 }

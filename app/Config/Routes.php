@@ -43,21 +43,19 @@ $routes->get('register', 'AuthController::register');
 $routes->post('register/attempt', 'AuthController::attemptRegister');
 
 
-$routes->post('service/create', 'ServiceController::create');
+$routes->post('services/create', 'ServiceController::create');
 $routes->get('services', 'ServicesController::index');
-$routes->post('service/create', 'ServicesController::create');
+$routes->post('home/dashboard', 'ServicesController::create');
 $routes->get('property', 'ServicesController::property');
 $routes->get('property/(:num)', 'ServicesController::showProperty/$1');
 $routes->get('material', 'ServicesController::material');
 
+$routes->get('home/dashboard', 'DashboardController::index');
+$routes->post('user/update', 'DashboardController::updateUser');
 
-
-$routes->get('service', 'ServicesController::index');
-$routes->post('service/create', 'ServicesController::create');
-
-
-
-
-$routes->match(['get', 'post'], 'service/create', 'ServicesController::create');
 
 $routes->get('construction', 'ConstructionController::index');
+
+$routes->post('service/create', 'ServicesController::create');
+
+$routes->post('user/update', 'UserController::update');

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->include('partials/navbar') ?>
 
 <head>
     <meta charset="utf-8">
@@ -20,23 +19,48 @@
         </div>
     </div>
 
-    <!-- User Account Details Section -->
+    <!-- User Account Details Section with Toggle Edit Mode -->
     <div class="container mt-5">
         <h2 class="text-center">Your Account Details</h2>
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <p><strong>Company Name:</strong> <?= esc($user['companyName']) ?: 'N/A' ?></p>
-                <p><strong>Email:</strong> <?= esc($user['email']) ?></p>
-                <p><strong>Contact Number:</strong> <?= esc($user['contactNumber']) ?: 'N/A' ?></p>
-                <p><strong>Registered Since:</strong> <?= esc($user['created_at']) ?></p>
+        <div id="accountDetails">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p><strong>Company Name:</strong> <span><?= esc($user['companyName']) ?: 'N/A' ?></span></p>
+                    <p><strong>Email:</strong> <span><?= esc($user['email']) ?></span></p>
+                    <p><strong>Contact Number:</strong> <span><?= esc($user['contactNumber']) ?: 'N/A' ?></span></p>
+                    <p><strong>Registered Since:</strong> <span><?= esc($user['created_at']) ?></span></p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <button class="btn btn-primary" onclick="toggleEdit()">Edit Details <i class="fas fa-edit"></i></button>
+                    <a href="<?= site_url('logout') ?>" class="btn btn-danger ms-2">Logout <i class="fas fa-sign-out-alt"></i></a>
+                </div>
             </div>
-            <div class="col-md-6 text-end">
-                <a href="<?= site_url('logout') ?>" class="btn btn-danger">Logout <i class="fas fa-sign-out-alt"></i></a>
-            </div>
+        </div>
+
+        <!-- Editable Form (Hidden by default) -->
+        <div id="editAccountForm" style="display: none;">
+            <form action="<?= site_url('user/update') ?>" method="post" class="row mb-4">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label><strong>Company Name:</strong></label>
+                        <input type="text" name="companyName" class="form-control" value="<?= esc($user['companyName']) ?>">
+                    </div>
+                    <p><strong>Email:</strong> <?= esc($user['email']) ?></p> <!-- Email cannot be changed -->
+                    <div class="mb-3">
+                        <label><strong>Contact Number:</strong></label>
+                        <input type="text" name="contactNumber" class="form-control" value="<?= esc($user['contactNumber']) ?>">
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <button type="submit" class="btn btn-success">Save Changes <i class="fas fa-save"></i></button>
+                    <button type="button" class="btn btn-secondary ms-2" onclick="toggleEdit()">Cancel</button>
+                </div>
+            </form>
         </div>
 
         <hr>
 
+        <!-- Your Services Section -->
         <h2 class="text-center mt-5">Your Services</h2>
         <?php if (empty($services)): ?>
             <p class="text-center">No services posted yet.</p>
@@ -52,6 +76,7 @@
                                 <p><strong>Location:</strong> <?= esc($service['location']) ?></p>
                                 <p><strong>Contact:</strong> <?= esc($service['contact_number']) ?></p>
                                 <p><strong>Price:</strong> $<?= esc($service['price']) ?></p>
+                                <p><strong>Description:</strong> <?= esc($service['description']) ?></p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +84,6 @@
             </div>
         <?php endif; ?>
     </div>
-
     <!-- Post a New Service Section -->
     <div class="container mt-5">
         <div class="section bg-light p-5 rounded">
@@ -75,6 +99,7 @@
                     <label for="service_type" class="form-label">Select Service Type</label>
                     <select id="service_type" name="service_type" class="form-select" required>
                         <option value="">-- Select Service Type --</option>
+                        <!-- Service types as options -->
                         <option value="1">Property</option>
                         <option value="2">Material Supplier</option>
                         <option value="3">Construction</option>
@@ -103,6 +128,12 @@
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
                     <input type="number" id="price" name="price" class="form-control" required>
+                </div>
+
+                <!-- Description field -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
                 </div>
 
                 <!-- Multi-Image Upload with Preview -->
@@ -152,6 +183,20 @@
                     previewContainer.appendChild(img);
                 }
                 reader.readAsDataURL(files[i]);
+            }
+        }
+    </script>
+       <script>
+        function toggleEdit() {
+            var accountDetails = document.getElementById('accountDetails');
+            var editAccountForm = document.getElementById('editAccountForm');
+
+            if (accountDetails.style.display === 'none') {
+                accountDetails.style.display = 'block';
+                editAccountForm.style.display = 'none';
+            } else {
+                accountDetails.style.display = 'none';
+                editAccountForm.style.display = 'block';
             }
         }
     </script>

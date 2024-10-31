@@ -77,129 +77,136 @@
                                 <p><strong>Contact:</strong> <?= esc($service['contact_number']) ?></p>
                                 <p><strong>Price:</strong> $<?= esc($service['price']) ?></p>
                                 <p><strong>Description:</strong> <?= esc($service['description']) ?></p>
+                                <!-- Edit and Delete buttons -->
+                                <div class="d-flex justify-content-between mt-3">
+                                    <a href="<?= site_url('service/edit/' . $service['id']) ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="<?= site_url('service/delete/' . $service['id']) ?>" method="post" onsubmit="return confirm('Are you sure you want to delete this service?');">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-    </div>
-    <!-- Post a New Service Section -->
-    <div class="container mt-5">
-        <div class="section bg-light p-5 rounded">
-            <h2 class="text-center">Post a New Service</h2>
-            <form action="<?= site_url('service/create') ?>" method="post" enctype="multipart/form-data">
 
-                <div class="mb-3">
-                    <label for="title" class="form-label">Service Title</label>
-                    <input type="text" id="title" name="title" class="form-control" required>
-                </div>
+        <!-- Post a New Service Section -->
+        <div class="container mt-5">
+            <div class="section bg-light p-5 rounded">
+                <h2 class="text-center">Post a New Service</h2>
+                <form action="<?= site_url('service/create') ?>" method="post" enctype="multipart/form-data">
 
-                <div class="mb-3">
-                    <label for="service_type" class="form-label">Select Service Type</label>
-                    <select id="service_type" name="service_type" class="form-select" required>
-                        <option value="">-- Select Service Type --</option>
-                        <!-- Service types as options -->
-                        <option value="1">Property</option>
-                        <option value="2">Material Supplier</option>
-                        <option value="3">Construction</option>
-                        <option value="4">Planning & Design</option>
-                        <option value="5">Architecture Design</option>
-                        <option value="6">Interior Design</option>
-                        <option value="7">Fixing & Support</option>
-                        <option value="8">Painting</option>
-                        <option value="9">Garden Design</option>
-                        <option value="10">Furnitures</option>
-                        <option value="11">Electrics</option>
-                        <option value="12">Dream Homes</option>
-                    </select>
-                </div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Service Title</label>
+                        <input type="text" id="title" name="title" class="form-control" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label for="location" class="form-label">Location</label>
-                    <input type="text" id="location" name="location" class="form-control" required>
-                </div>
+                    <div class="mb-3">
+                        <label for="service_type" class="form-label">Select Service Type</label>
+                        <select id="service_type" name="service_type" class="form-select" required>
+                            <option value="">-- Select Service Type --</option>
+                            <!-- Service types as options -->
+                            <option value="1">Property</option>
+                            <option value="2">Material Supplier</option>
+                            <option value="3">Construction</option>
+                            <option value="4">Planning & Design</option>
+                            <option value="5">Architecture Design</option>
+                            <option value="6">Interior Design</option>
+                            <option value="7">Fixing & Support</option>
+                            <option value="8">Painting</option>
+                            <option value="9">Garden Design</option>
+                            <option value="10">Furnitures</option>
+                            <option value="11">Electrics</option>
+                            <option value="12">Dream Homes</option>
+                        </select>
+                    </div>
 
-                <div class="mb-3">
-                    <label for="contact_number" class="form-label">Contact Number</label>
-                    <input type="text" id="contact_number" name="contact_number" class="form-control" required>
-                </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" id="location" name="location" class="form-control" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label for="price" class="form-label">Price</label>
-                    <input type="number" id="price" name="price" class="form-control" required>
-                </div>
+                    <div class="mb-3">
+                        <label for="contact_number" class="form-label">Contact Number</label>
+                        <input type="text" id="contact_number" name="contact_number" class="form-control" required>
+                    </div>
 
-                <!-- Description field -->
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
-                </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" id="price" name="price" class="form-control" required>
+                    </div>
 
-                <!-- Multi-Image Upload with Preview -->
-                <div class="mb-3">
-                    <label for="images" class="form-label">Upload Images (up to 3)</label>
-                    <input type="file" id="images" name="images[]" class="form-control-file" accept="image/*" multiple required onchange="previewImages()">
-                    <div id="image-preview" class="mt-3 d-flex flex-wrap"></div>
-                </div>
+                    <!-- Description field -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+                    </div>
 
-                <button type="submit" class="btn btn-primary w-100">Post Service</button>
-            </form>
+                    <!-- Multi-Image Upload with Preview -->
+                    <div class="mb-3">
+                        <label for="images" class="form-label">Upload Images (up to 3)</label>
+                        <input type="file" id="images" name="images[]" class="form-control-file" accept="image/*" multiple required onchange="previewImages()">
+                        <div id="image-preview" class="mt-3 d-flex flex-wrap"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Post Service</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="footer bg-dark text-light py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">&copy; <?= date('Y') ?> EcoHarmony Homes. All Rights Reserved.</p>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer class="footer bg-dark text-light py-4 mt-5">
+            <div class="container text-center">
+                <p class="mb-0">&copy; <?= date('Y') ?> EcoHarmony Homes. All Rights Reserved.</p>
+            </div>
+        </footer>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Image Preview Script -->
-    <script>
-        function previewImages() {
-            var previewContainer = document.getElementById('image-preview');
-            previewContainer.innerHTML = '';
-            var files = document.getElementById('images').files;
+        <!-- Image Preview Script -->
+        <script>
+            function previewImages() {
+                var previewContainer = document.getElementById('image-preview');
+                previewContainer.innerHTML = '';
+                var files = document.getElementById('images').files;
 
-            if (files.length > 3) {
-                alert("You can upload a maximum of 3 images.");
-                document.getElementById('images').value = '';
-                return;
-            }
-
-            for (var i = 0; i < files.length; i++) {
-                var reader = new FileReader();
-                reader.onload = function(event) {
-                    var img = document.createElement('img');
-                    img.src = event.target.result;
-                    img.classList.add('img-thumbnail', 'me-2', 'mb-2');
-                    img.style.width = '100px';
-                    img.style.height = '100px';
-                    previewContainer.appendChild(img);
+                if (files.length > 3) {
+                    alert("You can upload a maximum of 3 images.");
+                    document.getElementById('images').value = '';
+                    return;
                 }
-                reader.readAsDataURL(files[i]);
-            }
-        }
-    </script>
-       <script>
-        function toggleEdit() {
-            var accountDetails = document.getElementById('accountDetails');
-            var editAccountForm = document.getElementById('editAccountForm');
 
-            if (accountDetails.style.display === 'none') {
-                accountDetails.style.display = 'block';
-                editAccountForm.style.display = 'none';
-            } else {
-                accountDetails.style.display = 'none';
-                editAccountForm.style.display = 'block';
+                for (var i = 0; i < files.length; i++) {
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        var img = document.createElement('img');
+                        img.src = event.target.result;
+                        img.classList.add('img-thumbnail', 'me-2', 'mb-2');
+                        img.style.width = '100px';
+                        img.style.height = '100px';
+                        previewContainer.appendChild(img);
+                    }
+                    reader.readAsDataURL(files[i]);
+                }
             }
-        }
-    </script>
+        </script>
+        <script>
+            function toggleEdit() {
+                var accountDetails = document.getElementById('accountDetails');
+                var editAccountForm = document.getElementById('editAccountForm');
+
+                if (accountDetails.style.display === 'none') {
+                    accountDetails.style.display = 'block';
+                    editAccountForm.style.display = 'none';
+                } else {
+                    accountDetails.style.display = 'none';
+                    editAccountForm.style.display = 'block';
+                }
+            }
+        </script>
 
 </body>
 

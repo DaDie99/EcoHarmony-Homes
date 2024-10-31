@@ -14,14 +14,20 @@
                 <a href="<?= site_url('about') ?>" class="nav-item nav-link">About</a>
                 <a href="<?= site_url('contact') ?>" class="nav-item nav-link">Contact</a>
 
-                <!-- Conditional Login/Logout Button -->
+                <!-- Conditional Login/Logout and Dashboard Links -->
                 <?php if (session()->get('logged_in')): ?>
-                    <a href="<?= site_url('logout') ?>" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">
-                        <?= session()->get('ownerName'); ?> (Logout) <i class="bi bi-box-arrow-right"></i>
-                    </a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle bg-primary text-white px-4 ms-3" data-bs-toggle="dropdown">
+                            <?= esc(session()->get('ownerName')) ?> <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a href="<?= site_url('home/dashboard') ?>" class="dropdown-item">Dashboard</a>
+                            <a href="<?= site_url('logout') ?>" class="dropdown-item text-danger">Logout <i class="bi bi-box-arrow-right"></i></a>
+                        </div>
+                    </div>
                 <?php else: ?>
                     <a href="<?= site_url('login') ?>" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">
-                        LogIn <i class="bi bi-arrow-right"></i>
+                        Log In <i class="bi bi-arrow-right"></i>
                     </a>
                 <?php endif; ?>
             </div>

@@ -59,3 +59,7 @@ $routes->get('construction', 'ConstructionController::index');
 $routes->post('service/create', 'ServicesController::create');
 
 $routes->post('user/update', 'UserController::update');
+
+$routes->get('service/edit/(:num)', 'ServicesController::edit/$1');
+$routes->post('service/update/(:num)', 'ServicesController::update/$1');
+$routes->post('service/delete/(:num)', 'ServicesController::delete/$1');

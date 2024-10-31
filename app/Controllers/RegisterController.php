@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\RegisterModel;
+use App\Models\UserModel;
 
 class RegisterController extends BaseController
 {

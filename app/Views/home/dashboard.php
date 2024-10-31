@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <style>
+
+
+
+    </style>
 </head>
 
 <body>
@@ -25,30 +30,27 @@
         <div id="accountDetails">
             <div class="row mb-4">
                 <div class="col-md-6">
-                    <p><strong>Company Name:</strong> <span><?= esc($user['companyName']) ?: 'N/A' ?></span></p>
+                    <p><strong>User Name:</strong> <span><?= esc($user['ownerName']) ?: 'N/A' ?></span></p>
                     <p><strong>Email:</strong> <span><?= esc($user['email']) ?></span></p>
-                    <p><strong>Contact Number:</strong> <span><?= esc($user['contactNumber']) ?: 'N/A' ?></span></p>
-                    <p><strong>Registered Since:</strong> <span><?= esc($user['created_at']) ?></span></p>
                 </div>
                 <div class="col-md-6 text-end">
-                    <button class="btn btn-primary" onclick="toggleEdit()">Edit Details <i class="fas fa-edit"></i></button>
+
                     <a href="<?= site_url('logout') ?>" class="btn btn-danger ms-2">Logout <i class="fas fa-sign-out-alt"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- Editable Form (Hidden by default) -->
         <div id="editAccountForm" style="display: none;">
             <form action="<?= site_url('user/update') ?>" method="post" class="row mb-4">
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label><strong>Company Name:</strong></label>
-                        <input type="text" name="companyName" class="form-control" value="<?= esc($user['companyName']) ?>">
+                        <input type="text" name="companyName" class="form-control" value="<?= esc($user['companyName'] ?? '') ?>" placeholder="Enter Company Name">
                     </div>
-                    <p><strong>Email:</strong> <?= esc($user['email']) ?></p> <!-- Email cannot be changed -->
+                    <p><strong>Email:</strong> <?= esc($user['email'] ?? 'No Email Provided') ?></p>
                     <div class="mb-3">
                         <label><strong>Contact Number:</strong></label>
-                        <input type="text" name="contactNumber" class="form-control" value="<?= esc($user['contactNumber']) ?>">
+                        <input type="text" name="contactNumber" class="form-control" value="<?= esc($user['contactNumber'] ?? '') ?>" placeholder="Enter Contact Number">
                     </div>
                 </div>
                 <div class="col-md-6 text-end">
@@ -70,26 +72,29 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <img src="<?= base_url('uploads/services/' . $service['image']) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
-                            <div class="card-body">
+                            <div class="card-body text-center"> <!-- Center align text and buttons -->
                                 <h5 class="card-title"><?= esc($service['title']) ?></h5>
                                 <p><strong>Type:</strong> <?= esc($serviceMapping[$service['service_type']]) ?></p>
                                 <p><strong>Location:</strong> <?= esc($service['location']) ?></p>
                                 <p><strong>Contact:</strong> <?= esc($service['contact_number']) ?></p>
                                 <p><strong>Price:</strong> $<?= esc($service['price']) ?></p>
                                 <p><strong>Description:</strong> <?= esc($service['description']) ?></p>
-                                <!-- Edit and Delete buttons -->
-                                <div class="d-flex justify-content-between mt-3">
-                                    <a href="<?= site_url('service/edit/' . $service['id']) ?>" class="btn btn-warning btn-sm">Edit</a>
+
+                                <!-- Centered Edit and Delete buttons with same size and styling -->
+                                <div class="d-flex justify-content-center gap-2 mt-3">
+                                    <a href="<?= site_url('service/edit/' . $service['id']) ?>" class="btn btn-warning btn-sm d-flex align-items-center justify-content-center" style="width: 100px; height: 40px;">Edit</a>
                                     <form action="<?= site_url('service/delete/' . $service['id']) ?>" method="post" onsubmit="return confirm('Are you sure you want to delete this service?');">
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm d-flex align-items-center justify-content-center" style="width: 100px; height: 40px;">Delete</button>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
+
 
         <!-- Post a New Service Section -->
         <div class="container mt-5">

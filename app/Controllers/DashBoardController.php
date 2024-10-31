@@ -68,7 +68,7 @@ class DashboardController extends BaseController
     public function addService()
     {
         $user = session()->get('user_data');
-        $selectedServices = $this->request->getPost('services'); 
+        $selectedServices = $this->request->getPost('services');
 
         $model = new UserModel();
         $model->update($user['user_id'], [

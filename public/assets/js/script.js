@@ -27,3 +27,11 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
     }
 });
 
+// Simple Gallery Interaction (Placeholder for future enhancements)
+const galleryImages = document.querySelectorAll('.property-gallery img');
+galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        img.classList.toggle('active');
+    });
+});
+

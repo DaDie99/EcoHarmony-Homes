@@ -28,13 +28,28 @@ class RegisterController extends BaseController
         if ($model->register($data)) {
             return redirect()->to('/success'); // Redirect on success
         } else {
-            return redirect()->to('/register')->with('errors', 'Registration failed.');
+            return redirect()->to('/register')->with('errors', 'Register Failed Email Already Registered.');
         }
     }
 
     public function success()
 {
-    return view('homepage'); // Ensure you have a success.php view file in app/Views
+    return view('home/login'); // Ensure you have a success.php view file in app/Views
 }
+
+public function userProfile($userId)
+{
+    $model = new UserModel();
+    $user = $model->find($userId);
+
+    if ($user) {
+        // Fetch service name based on stored service code
+        $user['service_name'] = $model->getServiceName($user['service']);
+    }
+
+    // Pass user data to the view
+    return view('user/profile', ['user' => $user]);
+}
+
 
 }

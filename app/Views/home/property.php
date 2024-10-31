@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <base href="<?= base_url() ?>/">
 
@@ -48,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="#" class="nav-item nav-link">Home</a>
-                    <a href="<?= site_url('services') ?>" class="nav-item nav-link">Services</a>
+                    <a href="<?= site_url('services') ?>" class="nav-item nav-link active">Services</a>
                     <a href="<?= site_url('projects') ?>" class="nav-item nav-link">Projects</a>
                     <a href="<?= site_url('about') ?>" class="nav-item nav-link">About</a>
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
@@ -59,88 +56,66 @@
     </div>
     <!-- Navbar End -->
 
+<!-- Header Section -->
+<div class="bg-image">
+    <div class="overlay">
+        <h1 class="display-4 text-white">Find Your Dream Property</h1>
+        <p class="lead">Explore our top-rated properties and find the one that suits your needs.</p>
+    </div>
+</div>
 
-    <!-- Header Section -->
-    <div class="bg-image text-center text-white py-5" style="background-color: #040F28;">
-        <h1 class="display-4">Our Properties for Sale</h1>
-        <p>Discover Your Next Dream Home</p>
-        <!-- Search Bar -->
-        <div class="container">
-            <div class="input-group mt-3">
-                <input type="text" class="form-control" placeholder="Search by location, price, or property type">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </div>
+<!-- Filter Section -->
+<div class="container mt-5">
+    <form class="filter-form">
+        <label for="sortBy">Sort By:</label>
+        <select id="sortBy" name="sortBy" onchange="applyFilter()">
+            <option value="rating">Rating: High to Low</option>
+            <option value="price_high">Price: High to Low</option>
+            <option value="price_low">Price: Low to High</option>
+        </select>
+        <button type="button" class="btn btn-primary" onclick="applyFilter()">Apply Filter</button>
+    </form>
+</div>
+
+<!-- Property List Section -->
+<div class="container properties-list">
+    <?php if (!empty($properties)): ?>
+        <?php foreach ($properties as $property): ?>
+            <div class="property-card">
+                <img src="<?= base_url('assets/images/' . $property['image']) ?>" alt="<?= esc($property['title']) ?>">
+                <h3><?= esc($property['title']) ?></h3>
+                <p class="price">$<?= number_format($property['price'], 2) ?></p>
+                <p><i class="fa fa-star text-warning"></i> <?= esc($property['rating']) ?> / 5</p>
+                <p><?= esc($property['description']) ?></p>
+                <a href="<?= site_url('property/' . $property['id']) ?>" class="btn btn-primary">View Details</a>
             </div>
-        </div>
-    </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No properties found. Please adjust your filters.</p>
+    <?php endif; ?>
+</div>
 
-    <!-- Featured Properties Section -->
-    <div class="featured-property">
-        <div class="container text-center">
-            <h2>Featured Properties</h2>
-            <p class="mb-5">Our top selections of homes available now.</p>
-            <div class="row">
-                <!-- Example Featured Property -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-lg">
-                        <img src="path/to/featured-property.jpg" class="card-img-top property-image" alt="Featured Property">
-                        <div class="card-body">
-                            <h5 class="card-title">Luxury Villa with Ocean View</h5>
-                            <p class="card-text">Location: Malibu, CA</p>
-                            <p class="card-text">Price: $2,500,000</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more featured properties as needed -->
-            </div>
-        </div>
-    </div>
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Property Listing Grid -->
-    <div class="container my-5">
-        <h2 class="text-center mb-5">Explore More Properties</h2>
-        <div class="row">
-            <!-- Example Property Card -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card property-card shadow-sm">
-                    <img src="path/to/property-image1.jpg" class="card-img-top property-image" alt="Property Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Modern Apartment in City Center</h5>
-                        <p class="card-text">Location: San Francisco, CA</p>
-                        <p class="card-text">Price: $850,000</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat similar property cards here -->
-        </div>
+<!-- Footer -->
+<footer class="footer bg-dark text-light py-5">
+    <div class="container">
+        <p class="mb-0 text-center">&copy; <?= date('Y') ?> EcoHarmony Homes. All Rights Reserved.</p>
     </div>
+</footer>
 
-    <!-- Map Section -->
-    <div class="map-section text-center text-white">
-        <h2 class="py-5">Find Us On the Map</h2>
-        <p>Explore the locations of all available properties.</p>
-        <!-- Use a map embed or replace background image with an interactive map API -->
-    </div>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Testimonials -->
-    <div class="container my-5">
-        <h2 class="text-center mb-5">What Our Clients Say</h2>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <blockquote class="blockquote">
-                    <p class="mb-0">"The team at EcoHarmony Homes helped us find the perfect eco-friendly property. The process was seamless and professional!"</p>
-                    <footer class="blockquote-footer">John Doe, Happy Customer</footer>
-                </blockquote>
-            </div>
-            <!-- Add more testimonials as needed -->
-        </div>
-    </div>
+<!-- Script for Filtering Logic -->
+<script>
+    function applyFilter() {
+        const sortBy = document.getElementById('sortBy').value;
+        window.location.href = `<?= site_url('property?sortBy=') ?>` + sortBy;
+    }
+</script>
 
-    <!-- Call to Action -->
-    <div class="text-center py-5 bg-light">
-        <h3>Interested in a property? Schedule a viewing with us today!</h3>
-        <a href="contact.html" class="btn btn-primary mt-3">Contact Us</a>
-    </div>
+</body>
+</html>

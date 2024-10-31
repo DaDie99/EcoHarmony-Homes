@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="utf-8">
     <title>EcoHarmony Homes</title>
@@ -11,7 +10,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -36,8 +35,8 @@
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
         <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
-            <a href="#" class="nav-item nav-link active" class="navbar-brand">
-                <h1 class="m-0 display-4 text-uppercase text-white" ><i class="bi bi-building text-primary me-2"></i>EcoHarmony Homes</h1>
+            <a href="#" class="navbar-brand">
+                <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>EcoHarmony Homes</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -48,14 +47,25 @@
                     <a href="<?= site_url('services') ?>" class="nav-item nav-link">Services</a>
                     <a href="<?= site_url('projects') ?>" class="nav-item nav-link">Projects</a>
                     <a href="<?= site_url('about') ?>" class="nav-item nav-link">About</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="<?= site_url('login') ?>" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">LogIn <i class="bi bi-arrow-right"></i></a>
+                    <a href="<?= site_url('contact') ?>" class="nav-item nav-link">Contact</a>
+
+                    <!-- Conditional Login/Logout Button -->
+                    <?php if (session()->get('logged_in')): ?>
+                        <!-- Show Logout button with user's email if logged in -->
+                        <a href="<?= site_url('logout') ?>" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">
+                            <?= session()->get('email'); ?> (Logout) <i class="bi bi-box-arrow-right"></i>
+                        </a>
+                    <?php else: ?>
+                        <!-- Show Login button if not logged in -->
+                        <a href="<?= site_url('login') ?>" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">
+                            LogIn <i class="bi bi-arrow-right"></i>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>
     </div>
     <!-- Navbar End -->
-
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
@@ -98,12 +108,12 @@
 
 
     <!-- About Start -->
-   <!-- Main Content Section -->
-   <div class="container mt-5">
+    <!-- Main Content Section -->
+    <div class="container mt-5">
         <div class="row">
             <!-- Left Column -->
             <div class="col-md-6">
-                
+
                 <p>
                     At EcoHarmony Homes, we believe that sustainable living should never compromise on style or comfort. Our collection of sustainable home designs combines cutting-edge architecture with eco-friendly materials to create beautiful spaces that minimize environmental impact. Each design incorporates energy-efficient features such as solar panels, high-quality insulation, and water conservation systems, ensuring that your home not only looks good but also contributes positively to the planet.
                 </p>
@@ -118,19 +128,19 @@
                         <div class="carousel-item active">
                             <img src="assets\images\eco-house.jpg" class="d-block w-100" alt="Eco-Friendly Cottage">
                             <div class="carousel-caption d-none d-md-block">
-                                
+
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="assets\images\Eco Friendly Interior Design.jpg" class="d-block w-100" alt="Modern Minimalist Home">
                             <div class="carousel-caption d-none d-md-block">
-                                
+
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="assets\images\eco_friendly_sky_garden_home5.jpg" class="d-block w-100" alt="Family Haven">
                             <div class="carousel-caption d-none d-md-block">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -166,7 +176,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Where Sustainability Meets Sophistication</h5>
                         <p class="card-text">
-                        This modern sustainable home design emphasizes open space and energy efficiency, with expansive glass walls that maximize natural light and create a seamless connection between indoor and outdoor spaces. The architecture combines sleek lines with eco-friendly materials, showcasing a commitment to both style and environmental responsibility. The home's open structure allows for natural ventilation, helping to reduce the need for mechanical cooling.</p>
+                            This modern sustainable home design emphasizes open space and energy efficiency, with expansive glass walls that maximize natural light and create a seamless connection between indoor and outdoor spaces. The architecture combines sleek lines with eco-friendly materials, showcasing a commitment to both style and environmental responsibility. The home's open structure allows for natural ventilation, helping to reduce the need for mechanical cooling.</p>
                     </div>
                 </div>
             </div>
@@ -184,9 +194,9 @@
             <a href="portfolio.html" class="btn btn-primary">Explore More Designs</a>
         </div>
     </div>
-    
+
     <!-- About End -->
-    
+
 
     <!-- Services Start -->
     <div class="container-fluid bg-light py-6 px-5">
@@ -194,7 +204,7 @@
             <h1 class="display-5 text-uppercase mb-4">We Provide <span class="text-primary">The Best</span> Services</h1>
         </div>
         <div class="row g-5">
-        <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white d-flex flex-column align-items-center text-center">
                     <img class="img-fluid" src="img/service-1.jpg" alt="">
                     <div class="service-icon bg-white">
@@ -203,7 +213,7 @@
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Property</h4>
                         <p>Our Property Selling and Buying Service offers a seamless experience for homeowners and buyers alike. Whether you're selling your home or searching for your dream property, we provide expert guidance, market insights, and personalized support at every step. Our dedicated team helps sellers achieve the best price and ensures buyers find properties that meet their needs and budget. With extensive listings, professional evaluations, and negotiation support, we simplify the process and make real estate transactions stress-free, transparent, and efficient. Let us help you unlock the best opportunities in today's property market!</p>
-                        <a class="btn text-primary"  href="<?= site_url('property') ?>">Find a Property</a>
+                        <a class="btn text-primary" href="<?= site_url('property') ?>">Find a Property</a>
                     </div>
                 </div>
             </div>
@@ -220,7 +230,7 @@
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Material Supplier</h4>
                         <p>Material Supplier Service ensures that you have access to high-quality construction materials for your building projects, delivered on time and within budget. We provide a wide range of materials, from sustainable wood and eco-friendly insulation to high-grade concrete and steel, sourced from trusted suppliers. Whether you're working on a residential, commercial, or industrial project, our team is committed to delivering reliable products, tailored to your specific needs. With competitive pricing, timely delivery, and exceptional customer service, we make sure your project stays on track and meets the highest standards of quality.</p>
-                        <a class="btn text-primary"  href="<?= site_url('material') ?>">Find a material Supplier</a>
+                        <a class="btn text-primary" href="<?= site_url('material') ?>">Find a material Supplier</a>
                     </div>
                 </div>
             </div>
@@ -235,7 +245,7 @@
                     <div class="px-4 pb-4">
                         <h4 class="text-uppercase mb-3">Construction</h4>
                         <p>Construction Service provides comprehensive solutions for residential, commercial, and industrial projects. From planning and design to execution and final inspection, we manage every stage of the construction process with precision and professionalism. We offer services such as new builds and project management, ensuring that all work is completed on time, within budget, and to the highest quality standards. Our skilled team of architects, engineers, and builders use the latest construction techniques and materials, focusing on safety, sustainability, and client satisfaction. Let us bring your vision to life with reliable and expert construction services.</p>
-                        <a class="btn text-primary" href="">Find a Constructer</a>
+                        <a class="btn text-primary" href="<?= site_url('construction') ?>">Find a Constructer</a>
                     </div>
                 </div>
             </div>
@@ -362,7 +372,7 @@
                 </div>
             </div>
 
-            
+
         </div>
     </div>
     <!-- Services End -->
@@ -694,10 +704,10 @@
     <!-- Blog End -->
 
 
-      
 
-       <!-- Footer Start -->
-       <footer class="footer bg-dark text-light py-5">
+
+    <!-- Footer Start -->
+    <footer class="footer bg-dark text-light py-5">
         <div class="container">
             <div class="row">
 
@@ -779,7 +789,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>

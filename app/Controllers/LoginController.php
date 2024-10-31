@@ -19,7 +19,7 @@ class LoginController extends BaseController
 
         // Validate credentials (adjust according to your UserModel logic)
         if ($model->login($email, $password)) {
-            return redirect()->to('/dashboard'); // Redirect to the dashboard
+            return redirect()->to('home/homepage'); // Redirect to the dashboard
         } else {
             return redirect()->to('/login')->with('error', 'Invalid credentials.');
         }

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ServiceModel;
 
-class ConstructionController extends BaseController
+class InteriorDesignController extends BaseController
 {
     private $serviceMapping = [
         1 => 'Property',
@@ -40,13 +40,13 @@ class ConstructionController extends BaseController
             $orderDirection = 'ASC';
         }
 
-        // Fetch construction services with the desired sorting order
+        // Fetch interior design services with the desired sorting order
         $services = $serviceModel
-            ->where('service_type', 3) // Assuming service_type 3 is Construction
+            ->where('service_type', 6) // Assuming service_type 6 is Interior Design
             ->orderBy($orderField, $orderDirection)
             ->findAll();
 
-        return view('home/construction', [
+        return view('home/interior_design', [
             'services' => $services,
             'serviceMapping' => $this->serviceMapping
         ]);

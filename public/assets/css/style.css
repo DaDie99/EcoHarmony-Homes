@@ -389,3 +389,11 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
+
+.text-orange{
+    color: #FD5D14;
+    text-align: center;
+}
+.footer .list-unstyled li {
+    text-align: center;
+}

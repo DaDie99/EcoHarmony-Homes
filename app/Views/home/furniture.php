@@ -3,7 +3,7 @@
 <head>
     <base href="<?= base_url() ?>/">
     <meta charset="UTF-8">
-    <title>Construction Services - EcoHarmony Homes</title>
+    <title>Furniture Services - EcoHarmony Homes</title>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -34,8 +34,8 @@
     <!-- Header Section -->
     <div class="bg-image">
         <div class="overlay">
-            <h1 class="display-4 text-white">Find Your Construction Service</h1>
-            <p class="lead">Explore our range of construction services tailored to your needs.</p>
+            <h1 class="display-4 text-white">Quality Furniture Services</h1>
+            <p class="lead">Explore our extensive range of furniture services for your needs.</p>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
         </form>
     </div>
 
-    <!-- Construction Service List Section -->
+    <!-- Furniture Service List Section -->
     <div class="container properties-list">
         <?php if (!empty($services)): ?>
             <?php foreach ($services as $service): ?>
@@ -66,7 +66,7 @@
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>No construction services found. Please adjust your filters.</p>
+            <p>No furniture services found. Please adjust your filters.</p>
         <?php endif; ?>
     </div>
 
@@ -88,7 +88,7 @@
     <script>
         function applyFilter() {
             const sortBy = document.getElementById('sortBy').value;
-            window.location.href = `<?= site_url('construction?sortBy=') ?>` + sortBy;
+            window.location.href = `<?= site_url('furniture?sortBy=') ?>` + sortBy;
         }
     </script>
 

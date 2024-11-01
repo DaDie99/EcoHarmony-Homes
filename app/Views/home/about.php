@@ -150,80 +150,54 @@
     </section>
     <!-- Our Values Section End -->
 
-
-    <!-- Footer Start -->
+    <!--footer starts -->
     <footer class="footer bg-dark text-light py-5">
         <div class="container">
             <div class="row">
-
-                <!-- Company Information -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="text-uppercase font-weight-bold text-primary">EcoHarmony Homes</h5>
-                    <p class="mb-2">Creating sustainable, eco-friendly homes with a modern touch. Our mission is to lead the way in environmentally responsible construction and innovative home solutions.</p>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+                <!-- EcoHarmony Homes Description -->
+                <div class="col-md-4">
+                    <h5 class="text-orange">ECOHARMONY HOMES</h5>
+                    <p>Creating sustainable, eco-friendly homes with a modern touch. Our mission is to lead the way in environmentally responsible construction and innovative home solutions.</p>
+                    <div>
+                        <a href="#" class="text-light me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <!-- Quick Links -->
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5 class="text-uppercase font-weight-bold text-primary">Quick Links</h5>
+                <div class="col-md-4">
+                    <h5 class="text-orange">QUICK LINKS</h5>
                     <ul class="list-unstyled">
-                        <li><a href="about.html" class="text-light">About Us</a></li>
-                        <li><a href="projects.html" class="text-light">Projects</a></li>
-                        <li><a href="services.html" class="text-light">Services</a></li>
-                        <li><a href="contact.html" class="text-light">Contact</a></li>
-                        <li><a href="faq.html" class="text-light">FAQ</a></li>
+                        <li><a href="<?= site_url('about') ?>" class="text-light">About Us</a></li>
+                        <li><a href="<?= site_url('projects') ?>" class="text-light">Projects</a></li>
+                        <li><a href="<?= site_url('services') ?>" class="text-light">Services</a></li>
+                        <li><a href="<?= site_url('contact') ?>" class="text-light">Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="text-uppercase font-weight-bold text-primary">Our Services</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="landscape.html" class="text-light">Landscaping & Design</a></li>
-                        <li><a href="architecture.html" class="text-light">Architectural Design</a></li>
-                        <li><a href="construction.html" class="text-light">Construction</a></li>
-                        <li><a href="materials.html" class="text-light">Material Supply</a></li>
-                        <li><a href="painting.html" class="text-light">Painting & Finishing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter Subscription -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="text-uppercase font-weight-bold text-primary">Stay Updated</h5>
-                    <p>Subscribe to our newsletter for the latest updates on our projects and sustainable building tips.</p>
-                    <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Email">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit"><i class="fas fa-envelope"></i></button>
-                            </div>
-                        </div>
-                    </form>
+                <!-- Login/Register Section -->
+                <div class="col-md-4">
+                    <h5 class="text-orange">STAY CONNECTED</h5>
+                    <p>Connect with Our website for the latest updates on our services ,projects and sustainable building tips.</p>
+                    <div class="mt-3">
+                        <a href="<?= site_url('login') ?>" class="btn btn-outline-light me-2">Login</a>
+                        <a href="<?= site_url('register') ?>" class="btn btn-outline-light">Register</a>
+                    </div>
                 </div>
             </div>
-
-            <hr class="border-light my-4">
-
-            <!-- Bottom Footer -->
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
+            <hr />
+            <!-- Copyright Notice -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
                     <p class="mb-0">&copy; <span id="currentYear"></span> EcoHarmony Homes. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="privacy.html" class="text-light">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="terms.html" class="text-light">Terms of Service</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer End -->
+
+    <!--Footer End-->
 
 
 

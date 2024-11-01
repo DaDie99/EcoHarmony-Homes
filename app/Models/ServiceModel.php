@@ -6,10 +6,7 @@ use CodeIgniter\Model;
 
 class ServiceModel extends Model
 {
-    protected $table = 'services';
-    protected $primaryKey = 'id';
-    protected $allowedFields = [
-        'user_id', 'title', 'service_type', 'location', 
-        'contact_number', 'price', 'description', 'images'
-    ];
+    protected $table = 'services'; // Name of the table
+    protected $primaryKey = 'id';   // Primary key of the table
+    protected $allowedFields = ['title', 'service_type', 'location', 'contact_number', 'price', 'description', 'images','services']; // Fields that can be inserted or updated
 }

@@ -51,4 +51,16 @@ class MaterialSupplierController extends BaseController
             'serviceMapping' => $this->serviceMapping
         ]);
     }
+  
+    public function show($id)
+    {
+        $model = new ServiceModel();
+        $service = $model->find($id); // Fetching service by ID
+
+        if (!$service) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Service not found');
+        }
+
+        return view('home.material_supplier', ['service' => $service]);
+    }
 }

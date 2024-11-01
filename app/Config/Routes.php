@@ -79,3 +79,7 @@ $routes->get('/electrics', 'ElectricsController::index');
 $routes->get('/dream_homes', 'DreamHomesController::index');
 $routes->get('/material_supplier', 'MaterialSupplierController::index');
 $routes->get('/construction', 'ConstructionController::index');
+
+$routes->get('properties', 'PropertyController::index');
+$routes->get('property/(:num)', 'PropertyController::view/$1');
+$routes->get('material-supplier/(:num)', 'MaterialSupplierController::show/$1');

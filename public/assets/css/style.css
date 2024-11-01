@@ -7,7 +7,8 @@
 }
 
 .bg-image {
-    background-image: url('path/to/background-image.jpg'); /* Add your header background image */
+    background-image: url('path/to/background-image.jpg');
+    /* Add your header background image */
     height: 400px;
     background-size: cover;
     background-position: center;
@@ -25,13 +26,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark overlay for better text visibility */
     text-align: center;
 }
 
 .card {
     margin: 15px 0;
 }
+
 .pt-6 {
     padding-top: 90px;
 }
@@ -45,7 +48,7 @@
     padding-bottom: 90px;
 }
 
-.col-lg-4{
+.col-lg-4 {
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -151,7 +154,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar-dark .navbar-nav .nav-link  {
+    .navbar-dark .navbar-nav .nav-link {
         margin-left: 0;
         padding: 10px 0;
     }
@@ -274,6 +277,7 @@
 }
 
 @media (min-width: 992px) {
+
     .testimonial,
     .contact-form {
         margin-left: -90px;
@@ -294,7 +298,8 @@
 
 @media (min-width: 992px) {
     .footer::after {
-        display: none; /* Hides the vertical line */
+        display: none;
+        /* Hides the vertical line */
     }
 }
 
@@ -379,7 +384,9 @@ h2 {
     margin-bottom: 20px;
 }
 
-.filter-form label, .filter-form select, .filter-form button {
+.filter-form label,
+.filter-form select,
+.filter-form button {
     font-size: 16px;
     padding: 5px;
 }
@@ -390,10 +397,95 @@ h2 {
     gap: 20px;
 }
 
-.text-orange{
+.text-orange {
     color: #FD5D14;
     text-align: center;
 }
+
 .footer .list-unstyled li {
     text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows wrapping of images */
+    gap: 10px;
+    /* Space between images */
+}
+
+.property-image {
+    max-width: 100%;
+    /* Ensures images are responsive */
+    height: auto;
+    /* Keeps aspect ratio */
+    border-radius: 8px;
+    /* Optional styling */
+}
+
+.carousel-inner img {
+    max-height: 500px;
+    /* Adjust height as necessary */
+}
+
+.property-detail-container {
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #fff;
+    /* Change background color as per your design */
+}
+
+h3 {
+    color: #333;
+    /* Match your theme color */
+}
+
+.bg-image {
+    background-image: url('path/to/your/background-image.jpg');
+    /* Replace with your image path */
+    height: 300px;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
 }

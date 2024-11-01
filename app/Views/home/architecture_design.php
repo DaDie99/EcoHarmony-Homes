@@ -1,9 +1,12 @@
 <?= $this->include('partials/navbar') ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <base href="<?= base_url() ?>/">
     <meta charset="UTF-8">
-    <title>Architecture Design - EcoHarmony Homes</title>
+    <title>Architectural Design - EcoHarmony Homes</title>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -15,82 +18,151 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="assets/libs/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/libs/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="assets/libs/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
+    
+    <style>
+        .bg-image {
+            background-image: url('path/to/your/background-image.jpg'); /* Replace with your background image path */
+            height: 300px;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Header Section -->
-<div class="bg-image">
-    <div class="overlay">
-        <h1 class="display-4 text-white">Architecture Design Services</h1>
-        <p class="lead">Explore our premium architecture design services for your dream project.</p>
+    <!-- Header Section -->
+    <div class="bg-image">
+        <div class="overlay">
+            <h1 class="display-4">Architectural Design Services</h1>
+            <p class="lead">Explore our range of architectural design services tailored to your needs.</p>
+        </div>
     </div>
-</div>
 
-<!-- Filter Section -->
-<div class="container mt-5">
-    <form class="filter-form">
-        <label for="sortBy">Sort By:</label>
-        <select id="sortBy" name="sortBy" onchange="applyFilter()">
-            <option value="rating">Rating: High to Low</option>
-            <option value="price_high">Price: High to Low</option>
-            <option value="price_low">Price: Low to High</option>
-        </select>
-        <button type="button" class="btn btn-primary" onclick="applyFilter()">Apply Filter</button>
-    </form>
-</div>
-
-<!-- Architecture Design Service List Section -->
-<div class="container properties-list">
-    <?php if (!empty($services)): ?>
-        <?php foreach ($services as $service): ?>
-            <div class="property-card">
-                <img src="<?= base_url('uploads/services/' . $service['image']) ?>" alt="<?= esc($service['title']) ?>">
-                <h3><?= esc($service['title']) ?></h3>
-                <p class="price">$<?= number_format($service['price'], 2) ?></p>
-                <p><i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
-                <p><?= esc($service['description']) ?></p>
-                <a href="<?= site_url('service/' . $service['id']) ?>" class="btn btn-primary">View Details</a>
-            </div>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <p>No architecture design services found. Please adjust your filters.</p>
-    <?php endif; ?>
-</div>
-
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-<!-- Footer -->
-<footer class="footer bg-dark text-light py-5">
-    <div class="container">
-        <p class="mb-0 text-center">&copy; <?= date('Y') ?> EcoHarmony Homes. All Rights Reserved.</p>
+    <!-- Filter Section -->
+    <div class="container mt-5">
+        <form class="filter-form">
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy" name="sortBy" onchange="applyFilter()">
+                <option value="rating">Rating: High to Low</option>
+                <option value="price_high">Price: High to Low</option>
+                <option value="price_low">Price: Low to High</option>
+            </select>
+            <button type="button" class="btn btn-primary" onclick="applyFilter()">Apply Filter</button>
+        </form>
     </div>
-</footer>
 
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Architectural Design Services List Section -->
+    <div class="container mt-4">
+        <div class="row">
+            <?php if (!empty($services)): ?>
+                <?php foreach ($services as $service): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <?php
+                            $images = json_decode($service['images'], true);
+                            ?>
+                            <div id="carousel<?= $service['id'] ?>" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <?php if (!empty($images)): ?>
+                                        <?php foreach ($images as $index => $image): ?>
+                                            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                                                <img src="<?= base_url('uploads/services/' . $image) ?>" alt="<?= esc($service['title']) ?>" class="d-block w-100" onerror="this.style.display='none'">
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <div class="carousel-item active">
+                                            <img src="<?= base_url('uploads/services/default.jpg') ?>" alt="Default Image" class="d-block w-100">
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?= $service['id'] ?>" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel<?= $service['id'] ?>" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= esc($service['title']) ?></h5>
+                                <p class="price">$<?= number_format($service['price'], 2) ?></p>
+                                <p><i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
+                                <p><?= esc($service['description']) ?></p>
+                                <a href="<?= site_url('service/' . $service['id']) ?>" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No architectural design services found. Please adjust your filters.</p>
+            <?php endif; ?>
+        </div>
+    </div>
 
-<!-- Script for Filtering Logic -->
-<script>
-    function applyFilter() {
-        const sortBy = document.getElementById('sortBy').value;
-        window.location.href = `<?= site_url('architecture_design?sortBy=') ?>` + sortBy;
-    }
-</script>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <p class="mb-0 text-center">&copy; <?= date('Y') ?> EcoHarmony Homes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script for Filtering Logic -->
+    <script>
+        function applyFilter() {
+            const sortBy = document.getElementById('sortBy').value;
+            window.location.href = `<?= site_url('architectural_design?sortBy=') ?>` + sortBy;
+        }
+    </script>
 
 </body>
 </html>

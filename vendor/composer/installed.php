@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeigniter4/appstarter',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'aea07c2ec02d7f39d7e942251c89a383dec37622',
+        'pretty_version' => 'v4.4.8',
+        'version' => '4.4.8.0',
+        'reference' => NULL,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'codeigniter4/appstarter' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'aea07c2ec02d7f39d7e942251c89a383dec37622',
+            'pretty_version' => 'v4.4.8',
+            'version' => '4.4.8.0',
+            'reference' => NULL,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -99,15 +99,6 @@
             'install_path' => __DIR__ . '/../phar-io/version',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'phpmailer/phpmailer' => array(
-            'pretty_version' => 'v6.9.2',
-            'version' => '6.9.2.0',
-            'reference' => 'a7b17b42fa4887c92146243f3d2f4ccb962af17c',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'phpunit/php-code-coverage' => array(
             'pretty_version' => '9.2.32',

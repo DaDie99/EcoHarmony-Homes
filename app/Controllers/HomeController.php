@@ -29,18 +29,12 @@ class HomeController extends BaseController
         // Load the ServiceModel
         $this->serviceModel = new ServiceModel();
     }
+
     public function index()
-    {// Fetch 3 random services
-        $serviceModel = new ServiceModel();
-        $data['randomServices'] = $serviceModel->orderBy('RAND()')->findAll(3); // Fetch 3 random services
-    
-        // Include the service mapping in the data
-        $data['serviceMapping'] = $this->serviceMapping;
-    
-        return view('homepage', $data); // Pass all data to the homepage view
+    {
+        // Load the homepage view
+        return view('homepage');
     }
-    
-    
 
     public function dashboard()
     {

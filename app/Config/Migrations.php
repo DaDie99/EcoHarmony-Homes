@@ -46,18 +46,5 @@ class Migrations extends BaseConfig
      * - Y-m-d-His_
      * - Y_m_d_His_
      */
-    public string $timestampFormat = 'Y_m_d_His_'; // Using underscores for better readability
-
-    /**
-     * --------------------------------------------------------------------------
-     * Migration Names
-     * --------------------------------------------------------------------------
-     *
-     * This is an optional setting. If you want to change the prefix used for
-     * migration filenames, you can do that here.
-     *
-     * For example, if you want to prefix your migration filenames with
-     * 'v1_', you can set this value to 'v1_'.
-     */
-    public string $migrationPrefix = ''; // You can set a prefix if desired
+    public string $timestampFormat = 'Y-m-d-His_';
 }

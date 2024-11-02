@@ -58,7 +58,6 @@ $routes->get('/privacy', function () {
 });
 
 
-
 $routes->get('construction', 'ConstructionController::index');
 
 $routes->post('service/create', 'ServicesController::create');
@@ -84,20 +83,3 @@ $routes->get('/construction', 'ConstructionController::index');
 $routes->get('properties', 'PropertyController::index');
 $routes->get('property/(:num)', 'PropertyController::view/$1');
 $routes->get('material-supplier/(:num)', 'MaterialSupplierController::show/$1');
-
-$routes->get('contact', 'ContactController::index');
-$routes->post('contact/send', 'ContactController::send');
-
-$routes->get('comments', 'CommentController::index');
-$routes->post('comment/addComment', 'CommentController::addComment');
-$routes->post('comment/add', 'CommentController::addComment');
-$routes->post('home/addComment', 'HomeController::addComment');
-
-
-$routes->get('/', 'HomeController::index'); // This route points the root URL to the index method of HomeController
-$routes->get('homepage', 'HomeController::index');
-
-$routes->get('/', 'HomeController::index');
-
-
-

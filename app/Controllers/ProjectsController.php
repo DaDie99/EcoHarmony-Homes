@@ -109,7 +109,13 @@ class ProjectsController extends BaseController
     public function details($id)
     {
         $model = new ProjectModel();
-        $project = $model->find($id);
-        return view('projects/details', ['project' => $project]);
+        $project = $model->find($id); // Fetch project details by ID
+
+        if ($project) {
+            $project['images'] = json_decode($project['images'], true); // Decode images
+            return view('home/project_details', $project); // Render a view with project details
+        } else {
+            return json_encode(['error' => 'Project not found.']);
+        }
     }
 }

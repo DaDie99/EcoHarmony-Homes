@@ -1,10 +1,7 @@
 <?= $this->include('partials/navbar') ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Completed Projects - EcoHarmony Homes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
@@ -21,6 +18,7 @@
             <p class="lead text-white">Explore our range of completed projects tailored to your needs.</p>
         </div>
     </div>
+
     <!-- Completed Projects Section -->
     <div class="container mt-5">
         <div class="row">
@@ -69,7 +67,6 @@
         </div>
     </div>
 
-
     <!-- Project Details Modal -->
     <div class="modal fade" id="projectDetailsModal" tabindex="-1" aria-labelledby="projectDetailsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -79,62 +76,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="project-details-content">
-                    <!-- Project details will be loaded here via AJAX -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- Project details will be loaded here -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- Footer Section -->
-    <footer class="footer bg-dark text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5 class="text-orange">ECOHARMONY HOMES</h5>
-                    <p>Creating sustainable, eco-friendly homes with a modern touch. Our mission is to lead the way in environmentally responsible construction and innovative home solutions.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="text-orange">QUICK LINKS</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="<?= site_url('about') ?>" class="text-light">About Us</a></li>
-                        <li><a href="<?= site_url('projects') ?>" class="text-light">Projects</a></li>
-                        <li><a href="<?= site_url('services') ?>" class="text-light">Services</a></li>
-                        <li><a href="<?= site_url('contact') ?>" class="text-light">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="text-orange">STAY CONNECTED</h5>
-                    <p>Connect with Our website for the latest updates on our services, projects, and sustainable building tips.</p>
-                    <div class="mt-3">
-                        <a href="<?= site_url('login') ?>" class="btn btn-outline-light me-2">Login</a>
-                        <a href="<?= site_url('register') ?>" class="btn btn-outline-light">Register</a>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <div class="row mt-4">
-                <div class="col-md-12 text-center">
-                    <p class="mb-0">&copy; <span id="currentYear"></span> EcoHarmony Homes. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript Libraries -->
+    <!-- JavaScript to handle AJAX request and modal display -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- AJAX function to load project details -->
     <script>
         function showDetails(projectId) {
             $.ajax({
-                url: '<?= site_url('project/details/') ?>' + projectId, // Adjust your URL
+                url: '<?= site_url('project/details/') ?>' + projectId, // Adjust the URL
                 method: 'GET',
                 success: function(data) {
                     $('#project-details-content').html(data);
@@ -146,7 +101,5 @@
             });
         }
     </script>
-
 </body>
-
 </html>

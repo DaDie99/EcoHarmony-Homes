@@ -25,6 +25,8 @@ class ProjectsController extends BaseController
             $title = $this->request->getPost('title');
             $description = $this->request->getPost('description'); // Ensure this is capturing the description
 
+            $user_id = session()->get('user_id');
+
             // Handle image uploads
             $images = [];
             if ($this->request->getFiles()) {
@@ -41,9 +43,11 @@ class ProjectsController extends BaseController
             // Prepare data for insertion
             $data = [
                 'title' => $title,
-                'description' => $description, // Ensure description is included here
-                'images' => json_encode($images), // Store images as JSON
+                'description' => $description,
+                'images' => json_encode($images),
+                'user_id' => $user_id // Include user_id in the data
             ];
+    
 
             // Insert data into the database
             $model = new ProjectModel();

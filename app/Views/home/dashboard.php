@@ -187,6 +187,65 @@
         </div>
     </div>
 
+    <!-- Post a New Project Section -->
+    <div class="container mt-5">
+        <div class="section bg-light p-5 rounded">
+            <h2 class="text-center">Post a New Project</h2>
+            <form action="<?= site_url('project/create') ?>" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Project Title</label>
+                    <input type="text" id="title" name="title" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" id="location" name="location" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="completion_date" class="form-label">Completion Date</label>
+                    <input type="date" id="completion_date" name="completion_date" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="images" class="form-label">Upload Images (up to 3)</label>
+                    <input type="file" id="images" name="images[]" class="form-control-file" accept="image/*" multiple required onchange="previewImages()">
+                    <div id="image-preview" class="mt-3 d-flex flex-wrap"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Post Project</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function previewImages() {
+            var previewContainer = document.getElementById('image-preview');
+            previewContainer.innerHTML = '';
+            var files = document.getElementById('images').files;
+
+            if (files.length > 3) {
+                alert("You can upload a maximum of 3 images.");
+                document.getElementById('images').value = '';
+                return;
+            }
+
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    var img = document.createElement('img');
+                    img.src = event.target.result;
+                    img.classList.add('img-thumbnail', 'me-2', 'mb-2');
+                    img.style.width = '100px';
+                    img.style.height = '100px';
+                    previewContainer.appendChild(img);
+                }
+                reader.readAsDataURL(files[i]);
+            }
+        }
+    </script>
+
+
     <!--footer starts -->
     <footer class="footer bg-dark text-light py-5">
         <div class="container">

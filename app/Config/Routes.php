@@ -86,3 +86,8 @@ $routes->get('material-supplier/(:num)', 'MaterialSupplierController::show/$1');
 
 $routes->get('contact', 'ContactController::index');
 $routes->post('contact/send', 'ContactController::send');
+
+$routes->get('/projects', 'ProjectsController::index');
+$routes->get('/projects/create', 'ProjectsController::create');
+$routes->get('/projects/edit/(:num)', 'ProjectsController::edit/$1');
+$routes->post('/projects/delete/(:num)', 'ProjectsController::delete/$1');

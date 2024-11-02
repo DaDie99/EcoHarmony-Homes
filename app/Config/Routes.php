@@ -91,3 +91,9 @@ $routes->get('/projects', 'ProjectsController::index');
 $routes->get('/projects/create', 'ProjectsController::create');
 $routes->get('/projects/edit/(:num)', 'ProjectsController::edit/$1');
 $routes->post('/projects/delete/(:num)', 'ProjectsController::delete/$1');
+
+
+$routes->post('project/create', 'ProjectsController::create');
+$routes->get('/', 'Home::index');
+
+

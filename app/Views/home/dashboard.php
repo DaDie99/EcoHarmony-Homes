@@ -198,25 +198,21 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="location" class="form-label">Location</label>
-                    <input type="text" id="location" name="location" class="form-control" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="completion_date" class="form-label">Completion Date</label>
-                    <input type="date" id="completion_date" name="completion_date" class="form-control" required>
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="images" class="form-label">Upload Images (up to 3)</label>
-                    <input type="file" id="images" name="images[]" class="form-control-file" accept="image/*" multiple required onchange="previewImages()">
-                    <div id="image-preview" class="mt-3 d-flex flex-wrap"></div>
+                    <input type="file" id="images" name="images[]" class="form-control-file" accept="image/*" multiple required>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">Post Project</button>
             </form>
+
         </div>
     </div>
+
 
     <script>
         function previewImages() {
@@ -244,6 +240,7 @@
             }
         }
     </script>
+
 
 
     <!--footer starts -->

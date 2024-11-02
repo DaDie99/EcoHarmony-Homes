@@ -6,17 +6,9 @@ use CodeIgniter\Model;
 
 class ProjectModel extends Model
 {
-    protected $table = 'projects'; // Table name
-    protected $primaryKey = 'id'; // Primary key
-    protected $allowedFields = [
-        'title',
-        'location',
-        'completion_date',
-        'images',
-        'created_at',
-        'updated_at',
-    ]; // Fields that can be mass-assigned
-    protected $useTimestamps = true; // Enable automatic timestamping
+    protected $table = 'projects'; // Name of your table
+    protected $primaryKey = 'id';   // Primary key of the table
+    protected $allowedFields = ['title', 'description', 'images']; // Fields you want to allow for insert/update
 
-    // You can define custom methods for additional queries as needed
+    // You can add any additional configurations if necessary, like validation rules
 }

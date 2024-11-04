@@ -6,7 +6,7 @@
 <head>
     <base href="<?= base_url() ?>/">
     <meta charset="UTF-8">
-    <title>Architectural Design - EcoHarmony Homes</title>
+    <title>Architecture Design - EcoHarmony Homes</title>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -26,7 +26,7 @@
     <style>
         .bg-image {
             background-image: url('path/to/your/background-image.jpg');
-            /* Replace with your background image path */
+            /* Replace with your image path */
             height: 300px;
             background-size: cover;
             position: relative;
@@ -76,8 +76,8 @@
     <!-- Header Section -->
     <div class="bg-image">
         <div class="overlay">
-            <h1 class="display-4">Architectural Design Services</h1>
-            <p class="lead">Explore our range of architectural design services tailored to your needs.</p>
+            <h1 class="display-4">Architecture Design Services</h1>
+            <p class="lead">Explore our innovative architecture design services to create your ideal space.</p>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
         </form>
     </div>
 
-    <!-- Architectural Design Services List Section -->
+    <!-- Architecture Design Services List Section -->
     <div class="container mt-4">
         <div class="row">
             <?php if (!empty($services)): ?>
@@ -127,24 +127,44 @@
                                     <span class="visually-hidden">Next</span>
                                 </button>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title"><?= esc($service['title']) ?></h5>
+                            <div class="details-container">
+                                <h3><?= esc($service['title']) ?></h3>
                                 <p class="price">$<?= number_format($service['price'], 2) ?></p>
                                 <p><i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
                                 <p><?= esc($service['description']) ?></p>
-                                <a href="<?= site_url('service/' . $service['id']) ?>" class="btn btn-primary">View Details</a>
+                                <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $service['id'] ?>">View Details</a>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>No architectural design services found. Please adjust your filters.</p>
+                <p>No services found. Please adjust your filters.</p>
             <?php endif; ?>
         </div>
     </div>
 
+    <!-- Service Details Modal -->
+    <div class="modal fade" id="serviceDetailsModal" tabindex="-1" aria-labelledby="serviceDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceDetailsLabel">Service Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="serviceDetailsContent">
+                    <!-- Content will be loaded here via AJAX -->
+                    <div class="text-center my-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!--footer starts -->
     <footer class="footer bg-dark text-light py-5">
@@ -203,8 +223,34 @@
     <script>
         function applyFilter() {
             const sortBy = document.getElementById('sortBy').value;
-            window.location.href = `<?= site_url('architectural_design?sortBy=') ?>` + sortBy;
+            window.location.href = `<?= site_url('architecture_design?sortBy=') ?>` + sortBy;
         }
+
+        // AJAX to load service details in modal
+        $(document).ready(function() {
+            $('.view-details').on('click', function() {
+                var serviceId = $(this).data('id');
+                $('#serviceDetailsContent').html(`
+                    <div class="text-center my-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                `);
+                $('#serviceDetailsModal').modal('show');
+
+                $.ajax({
+                    url: `<?= site_url('architecture_design/getServiceDetails') ?>/${serviceId}`,
+                    method: 'GET',
+                    success: function(response) {
+                        $('#serviceDetailsContent').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        $('#serviceDetailsContent').html('<div class="alert alert-danger text-center">Failed to load service details. Please try again later.</div>');
+                    }
+                });
+            });
+        });
     </script>
 
 </body>

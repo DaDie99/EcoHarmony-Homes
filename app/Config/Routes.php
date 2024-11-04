@@ -111,6 +111,7 @@ $routes->get('fixing_and_support/getServiceDetails/(:num)', 'FixingSupportContro
 $routes->get('painting/getServiceDetails/(:num)', 'PaintingController::getServiceDetails/$1');
 $routes->get('garden_design/getServiceDetails/(:num)', 'GardenDesignController::getServiceDetails/$1');
 $routes->get('furniture/getServiceDetails/(:num)', 'FurnitureController::getServiceDetails/$1');
+$routes->get('electrics/getServiceDetails/(:num)', 'ElectricsController::getServiceDetails/$1');
 
 
 

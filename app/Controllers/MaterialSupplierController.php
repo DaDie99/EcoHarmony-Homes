@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ServiceModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
 
 class MaterialSupplierController extends BaseController
 {
@@ -51,16 +52,33 @@ class MaterialSupplierController extends BaseController
             'serviceMapping' => $this->serviceMapping
         ]);
     }
-  
+
     public function show($id)
     {
+        // Initialize the model
         $model = new ServiceModel();
-        $service = $model->find($id); // Fetching service by ID
+        
+        // Fetch the service by ID
+        $service = $model->find($id);
 
+        // Check if the service exists
         if (!$service) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Service not found');
+            throw new PageNotFoundException('Service not found');
         }
 
-        return view('home.material_supplier', ['service' => $service]);
+        // Prepare data for the modal view
+        $data = [
+            'title' => $service['title'] ?? 'N/A',
+            'price' => $service['price'] ?? 0,
+            'rating' => $service['rating'] ?? 'Not rated',
+            'description' => $service['description'] ?? 'No description available',
+            'images' => json_decode($service['images'], true) ?? [] // Decode JSON images if available
+        ];
+
+        // Log for debugging (optional)
+        log_message('debug', 'Loaded service details for ID: ' . $id);
+
+        // Return the view specifically for the modal
+        return view('home/material_supplier_details', $data);
     }
 }

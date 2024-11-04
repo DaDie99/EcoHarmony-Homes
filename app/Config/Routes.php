@@ -99,5 +99,12 @@ $routes->get('project/details/(:num)', 'ProjectsController::details/$1');
 
 
 $routes->get('property/showProperty/(:num)', 'PropertyController::showProperty/$1');
+$routes->get('materiel_supplier/show/(:num)', 'MaterialSupplierController::show/$1');
+$routes->get('service/showSupplier/(:num)', 'MaterialSupplierController::show/$1');
+
+
+
+
+
 
 

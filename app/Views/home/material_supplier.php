@@ -24,13 +24,13 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
     <style>
+        /* Custom Styles */
         body {
             background-color: #f8f9fa;
         }
 
         .bg-image {
             background-image: url('path/to/your/background-image.jpg');
-            /* Update with your image path */
             height: 300px;
             background-size: cover;
             position: relative;
@@ -98,9 +98,7 @@
                 <?php foreach ($services as $service): ?>
                     <div class="col-md-4 mb-4">
                         <div class="property-card">
-                            <?php
-                            $images = json_decode($service['images'], true);
-                            ?>
+                            <?php $images = json_decode($service['images'], true); ?>
                             <div id="carousel<?= $service['id'] ?>" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <?php if (!empty($images)): ?>
@@ -129,7 +127,8 @@
                                 <p class="price">$<?= number_format($service['price'], 2) ?></p>
                                 <p><i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
                                 <p><?= esc($service['description']) ?></p>
-                                <a href="<?= site_url('service/' . $service['id']) ?>" class="btn btn-primary">View Details</a>
+                                <!-- Set data-id attribute correctly for AJAX call -->
+                                <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $service['id'] ?>">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -137,6 +136,26 @@
             <?php else: ?>
                 <p>No material suppliers found. Please adjust your filters.</p>
             <?php endif; ?>
+        </div>
+    </div>
+
+    <!-- Material Supplier Details Modal -->
+    <div class="modal fade" id="materialSupplierModal" tabindex="-1" aria-labelledby="materialSupplierLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="materialSupplierLabel">Materiel Supplier Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="materialSupplierContent">
+                    <!-- Content will be loaded here via AJAX -->
+                    <div class="text-center my-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -196,12 +215,36 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script for Filtering Logic -->
+    <!-- Filtering Script -->
     <script>
         function applyFilter() {
             const sortBy = document.getElementById('sortBy').value;
             window.location.href = `<?= site_url('material-supplier?sortBy=') ?>` + sortBy;
         }
+    </script>
+
+    <!-- AJAX Script for Modal Details -->
+    <script>
+        $(document).ready(function() {
+            $('.view-details').on('click', function() {
+                var serviceId = $(this).data('id');
+
+                $('#materialSupplierContent').html('<div class="text-center my-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+
+                $.ajax({
+                    url: '<?= site_url('service/showSupplier/') ?>' + serviceId, // Ensure this matches your route
+                    method: 'GET',
+                    success: function(response) {
+                        $('#materialSupplierContent').html(response);
+                        $('#materialSupplierModal').modal('show');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error: " + error);
+                        $('#materialSupplierContent').html('<div class="alert alert-danger text-center">Error loading supplier details.</div>');
+                    }
+                });
+            });
+        });
     </script>
 
 </body>

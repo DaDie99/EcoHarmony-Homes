@@ -107,6 +107,9 @@ $routes->get('construction/getServiceDetails/(:num)', 'ConstructionController::g
 $routes->get('planning_and_design/getServiceDetails/(:num)', 'PlanningAndDesignController::getServiceDetails/$1');
 $routes->get('architecture_design/getServiceDetails/(:num)', 'ArchitectureDesignController::getServiceDetails/$1');
 $routes->get('interior_design/getServiceDetails/(:num)', 'InteriorDesignController::getServiceDetails/$1');
+$routes->get('fixing_and_support/getServiceDetails/(:num)', 'FixingSupportController::getServiceDetails/$1');
+
+
 
 
 

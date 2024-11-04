@@ -51,4 +51,34 @@ class ConstructionController extends BaseController
             'serviceMapping' => $this->serviceMapping
         ]);
     }
+    public function viewService($id)
+    {
+        // Load the model
+        $serviceModel = new ServiceModel();
+
+        // Fetch the service by ID
+        $service = $serviceModel->find($id);
+
+        // Check if service exists
+        if (!$service) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Service not found.");
+        }
+
+        // Pass the service data to the view
+        return view('home/service_detail', ['service' => $service]);
+    }public function getServiceDetails($id)
+    {
+        $serviceModel = new ServiceModel();
+    
+        // Fetch service by ID
+        $service = $serviceModel->find($id);
+    
+        if (!$service) {
+            return '<p class="text-center text-danger">Service not found.</p>';
+        }
+    
+        // Load partial view for service details
+        return view('home/construction_details', ['service' => $service]);
+    }
+    
 }

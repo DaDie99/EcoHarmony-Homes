@@ -24,13 +24,14 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
     <style>
+        /* Custom styling */
         body {
             background-color: #f8f9fa;
         }
 
         .bg-image {
             background-image: url('path/to/your/background-image.jpg');
-            /* Replace with your image path */
+            /* Replace with actual image path */
             height: 300px;
             background-size: cover;
             position: relative;
@@ -68,13 +69,30 @@
             margin-bottom: 10px;
         }
 
-        .card-body {
-            text-align: center;
-        }
-
         .footer {
             background-color: #343a40;
             color: #fff;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #serviceDetailsContent h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        #serviceDetailsContent p {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -140,7 +158,9 @@
                                 <p class="price">$<?= number_format($service['price'], 2) ?></p>
                                 <p><i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
                                 <p><?= esc($service['description']) ?></p>
-                                <a href="<?= site_url('service/' . $service['id']) ?>" class="btn btn-primary">View Details</a>
+                                <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $service['id'] ?>">View Details</a>
+
+
                             </div>
                         </div>
                     </div>
@@ -151,10 +171,33 @@
         </div>
     </div>
 
+    <!-- Construction Details Modal -->
+    <div class="modal fade" id="serviceDetailsModal" tabindex="-1" aria-labelledby="serviceDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceDetailsLabel">Construction Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="serviceDetailsContent">
+                    <!-- Content will be loaded here via AJAX -->
+                    <div class="text-center my-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!--footer starts -->
+    <!-- Footer -->
     <footer class="footer bg-dark text-light py-5">
         <div class="container">
             <div class="row">
@@ -184,7 +227,7 @@
                 <!-- Login/Register Section -->
                 <div class="col-md-4">
                     <h5 class="text-orange">STAY CONNECTED</h5>
-                    <p>Connect with Our website for the latest updates on our services ,projects and sustainable building tips.</p>
+                    <p>Connect with Our website for the latest updates on our services, projects, and sustainable building tips.</p>
                     <div class="mt-3">
                         <a href="<?= site_url('login') ?>" class="btn btn-outline-light me-2">Login</a>
                         <a href="<?= site_url('register') ?>" class="btn btn-outline-light">Register</a>
@@ -192,7 +235,6 @@
                 </div>
             </div>
             <hr />
-            <!-- Copyright Notice -->
             <div class="row mt-4">
                 <div class="col-md-12 text-center">
                     <p class="mb-0">&copy; <span id="currentYear"></span> EcoHarmony Homes. All Rights Reserved.</p>
@@ -201,19 +243,47 @@
         </div>
     </footer>
 
-    <!--Footer End-->
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Script for Filtering Logic -->
     <script>
-        function applyFilter() {
-            const sortBy = document.getElementById('sortBy').value;
-            window.location.href = `<?= site_url('material-supplier?sortBy=') ?>` + sortBy;
-        }
+        $(document).ready(function() {
+            $('.view-details').on('click', function() {
+                var serviceId = $(this).data('id');
+
+                // Show loading spinner in the modal content area
+                $('#serviceDetailsContent').html(`
+                <div class="text-center my-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            `);
+
+                // Show the modal
+                $('#serviceDetailsModal').modal('show');
+
+                // Make AJAX request to fetch service details
+                $.ajax({
+                    url: `<?= site_url('construction/getServiceDetails') ?>/${serviceId}`,
+                    method: 'GET',
+                    success: function(response) {
+                        // Load response HTML into the modal content
+                        $('#serviceDetailsContent').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error fetching service details:", error);
+                        $('#serviceDetailsContent').html('<div class="alert alert-danger text-center">Failed to load service details. Please try again later.</div>');
+                    }
+                });
+            });
+        });
     </script>
+
+
+
 
 </body>
 

@@ -104,6 +104,8 @@ $routes->get('service/showSupplier/(:num)', 'MaterialSupplierController::show/$1
 $routes->get('service/(:num)', 'ConstructionController::viewService/$1');
 
 $routes->get('construction/getServiceDetails/(:num)', 'ConstructionController::getServiceDetails/$1');
+$routes->get('planning_and_design/getServiceDetails/(:num)', 'PlanningAndDesignController::getServiceDetails/$1');
+
 
 
 

@@ -144,7 +144,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="materialSupplierLabel">Materiel Supplier Details</h5>
+                    <h5 class="modal-title" id="materialSupplierLabel">Service Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="materialSupplierContent">
@@ -221,10 +221,10 @@
             const sortBy = document.getElementById('sortBy').value;
             window.location.href = `<?= site_url('material-supplier?sortBy=') ?>` + sortBy;
         }
-    </script>
+   
 
-    <!-- AJAX Script for Modal Details -->
-    <script>
+  //AJAX Script for Modal Details 
+
         $(document).ready(function() {
             $('.view-details').on('click', function() {
                 var serviceId = $(this).data('id');

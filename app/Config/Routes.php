@@ -98,5 +98,6 @@ $routes->get('/', 'Home::index');
 $routes->get('project/details/(:num)', 'ProjectsController::details/$1');
 
 
+$routes->get('property/showProperty/(:num)', 'PropertyController::showProperty/$1');
 
 

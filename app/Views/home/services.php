@@ -4,7 +4,7 @@
     <base href="<?= base_url() ?>/">
 
     <meta charset="UTF-8">
-    <title>Projects - EcoHarmony Homes</title>
+    <title>Services- EcoHarmony Homes</title>
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 

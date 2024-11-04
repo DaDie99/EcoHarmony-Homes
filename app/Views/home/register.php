@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,7 +94,7 @@
         .register-button {
             width: 100%;
             padding: 12px;
-            
+
             background-color: #ff8c00;
             color: #fff;
             border: none;
@@ -120,7 +117,7 @@
 
     <div class="register-container">
         <div class="register-header">
-            <img src="<?= base_url('images/logo.png'); ?>" alt="EcoHarmony Homes Logo" class="logo">
+            <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>EcoHarmony Homes</h1>
             <h2>Create an Account</h2>
         </div>
 
@@ -169,10 +166,10 @@
                 </select>
             </div>
             <button type="submit" class="register-button">Register</button>
-            
+
             <div class="auth-links">
-            <a href="<?= site_url('#') ?>">Home</a>
-        </div>
+                <a href="<?= site_url('#') ?>">Home</a>
+            </div>
 
 
         </form>

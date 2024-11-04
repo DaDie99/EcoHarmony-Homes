@@ -113,8 +113,10 @@
 <body>
 
     <div class="login-container">
+        
         <div class="login-logo">
-            <img src="<?= base_url('images/logo.png'); ?>" alt="EcoHarmony Homes Logo"> <!-- Add your logo here -->
+            
+        <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>EcoHarmony Homes</h1>
         </div>
         <h2 class="welcome-text">Welcome Back</h2>
 

@@ -112,6 +112,8 @@ $routes->get('painting/getServiceDetails/(:num)', 'PaintingController::getServic
 $routes->get('garden_design/getServiceDetails/(:num)', 'GardenDesignController::getServiceDetails/$1');
 $routes->get('furniture/getServiceDetails/(:num)', 'FurnitureController::getServiceDetails/$1');
 $routes->get('electrics/getServiceDetails/(:num)', 'ElectricsController::getServiceDetails/$1');
+$routes->get('dream-homes/getServiceDetails/(:num)', 'DreamHomesController::getServiceDetails/$1');
+
 
 
 

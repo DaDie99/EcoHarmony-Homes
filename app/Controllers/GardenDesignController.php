@@ -51,4 +51,15 @@ class GardenDesignController extends BaseController
             'serviceMapping' => $this->serviceMapping
         ]);
     }
+    public function getServiceDetails($id)
+    {
+        $serviceModel = new ServiceModel();
+        $service = $serviceModel->find($id);
+
+        if (!$service) {
+            return '<p class="text-center text-danger">Service not found.</p>';
+        }
+
+        return view('home/construction_details', ['service' => $service]);
+    }
 }

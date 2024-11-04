@@ -85,7 +85,7 @@
                                 <p class="price">$<?= number_format($service['price'], 2) ?></p>
                                 <p><i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
                                 <p><?= esc($service['description']) ?></p>
-                                <a href="<?= site_url('service/' . $service['id']) ?>" class="btn btn-primary">View Details</a>
+                                <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $service['id'] ?>">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -93,6 +93,26 @@
             <?php else: ?>
                 <p>No garden design services found. Please adjust your filters.</p>
             <?php endif; ?>
+        </div>
+    </div>
+
+    <!-- Service Details Modal -->
+    <div class="modal fade" id="serviceDetailsModal" tabindex="-1" aria-labelledby="serviceDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceDetailsLabel">Service Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="serviceDetailsContent">
+                    <!-- Content will be loaded here via AJAX -->
+                    <div class="text-center my-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -158,6 +178,32 @@
             const sortBy = document.getElementById('sortBy').value;
             window.location.href = `<?= site_url('garden_design?sortBy=') ?>` + sortBy;
         }
+
+        // AJAX to load service details in modal
+        $(document).ready(function() {
+            $('.view-details').on('click', function() {
+                var serviceId = $(this).data('id');
+                $('#serviceDetailsContent').html(`
+                    <div class="text-center my-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                `);
+                $('#serviceDetailsModal').modal('show');
+
+                $.ajax({
+                    url: `<?= site_url('garden_design/getServiceDetails') ?>/${serviceId}`,
+                    method: 'GET',
+                    success: function(response) {
+                        $('#serviceDetailsContent').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        $('#serviceDetailsContent').html('<div class="alert alert-danger text-center">Failed to load service details. Please try again later.</div>');
+                    }
+                });
+            });
+        });
     </script>
 
 </body>

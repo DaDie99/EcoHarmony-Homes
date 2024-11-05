@@ -126,9 +126,12 @@ $routes->get('/', 'HomeController::index');  // Route for displaying the homepag
 $routes->get('/dashboard', 'HomeController::dashboard');  // Dashboard route
 
 
-$routes->get('/admin', 'AdminController::index', ['filter' => 'auth']);
-$routes->get('/admin/deleteUser/(:num)', 'AdminController::deleteUser/$1', ['filter' => 'auth']);
-$routes->get('/admin/deleteProject/(:num)', 'AdminController::deleteProject/$1', ['filter' => 'auth']);
+$routes->get('admin', 'AdminController::index');
+$routes->get('admin/deleteUser/(:num)', 'AdminController::deleteUser/$1');
+$routes->get('admin/deleteProject/(:num)', 'AdminController::deleteProject/$1');
+$routes->get('admin/deleteService/(:num)', 'AdminController::deleteService/$1');
+$routes->get('admin/deleteFeedback/(:num)', 'AdminController::deleteFeedback/$1');
+
 
 
 
@@ -138,6 +141,7 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
     // Add other protected routes here
 });
 
+$routes->get('admin/deleteService/(:num)', 'AdminController::deleteService/$1');
 
 
 

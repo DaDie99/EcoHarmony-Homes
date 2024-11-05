@@ -7,6 +7,7 @@ use App\Models\ServiceModel;
 use App\Models\ProjectModel;
 use App\Models\FeedbackModel;
 use CodeIgniter\Controller;
+use Config\Database;
 
 class AdminController extends BaseController
 {
@@ -14,6 +15,7 @@ class AdminController extends BaseController
     protected $serviceModel;
     protected $projectModel;
     protected $feedbackModel;
+    protected $db;
 
     public function __construct()
     {
@@ -21,16 +23,15 @@ class AdminController extends BaseController
         $this->serviceModel = new ServiceModel();
         $this->projectModel = new ProjectModel();
         $this->feedbackModel = new FeedbackModel();
+        $this->db = Database::connect();
     }
 
     public function index()
     {
-        // Ensure only admin can access this page
         if (!session()->get('is_admin')) {
             return redirect()->to('/home/dashboard')->with('error', 'Access Denied');
         }
 
-        // Fetch data for the admin dashboard
         $data = [
             'users' => $this->userModel->findAll(),
             'services' => $this->serviceModel->findAll(),
@@ -38,31 +39,85 @@ class AdminController extends BaseController
             'feedbacks' => $this->feedbackModel->findAll(),
         ];
 
-        // Load the admin dashboard view
         return view('admin/dashboard', $data);
     }
 
-    // Method to delete a user
     public function deleteUser($id)
     {
-        if (session()->get('is_admin')) {
+        if (!session()->get('is_admin')) {
+            return redirect()->to('/home/dashboard')->with('error', 'Access Denied');
+        }
+
+        if ($this->userModel->find($id)) {
             $this->userModel->delete($id);
             return redirect()->to('/admin')->with('message', 'User deleted successfully.');
         } else {
-            return redirect()->to('/home/dashboard')->with('error', 'Access Denied');
+            return redirect()->to('/admin')->with('error', 'User not found.');
         }
     }
 
-    // Method to delete a project
     public function deleteProject($id)
     {
-        if (session()->get('is_admin')) {
+        if (!session()->get('is_admin')) {
+            return redirect()->to('/home/dashboard')->with('error', 'Access Denied');
+        }
+
+        if ($this->projectModel->find($id)) {
             $this->projectModel->delete($id);
             return redirect()->to('/admin')->with('message', 'Project deleted successfully.');
         } else {
-            return redirect()->to('/home/dashboard')->with('error', 'Access Denied');
+            return redirect()->to('/admin')->with('error', 'Project not found.');
         }
     }
 
-    // Similar methods for deleting services and feedbacks can be added here
+    public function deleteService($id)
+{
+    if (!session()->get('is_admin')) {
+        return redirect()->to('/home/dashboard')->with('error', 'Access Denied');
+    }
+
+    // Start a transaction to handle multiple deletions
+    $this->db->transBegin();
+
+    // Related tables that need their records deleted first
+    $relatedTables = ['fixing_and_support', 'material_supplier', 'electrics', 'property'];
+    
+    foreach ($relatedTables as $table) {
+        if ($this->db->tableExists($table)) {
+            // Delete related entries in each table where `service_id` matches
+            $this->db->table($table)->where('service_id', $id)->delete();
+        }
+    }
+
+    // Now delete the main service entry
+    if ($this->serviceModel->find($id)) {
+        $this->serviceModel->delete($id);
+    }
+
+    // Check transaction status
+    if ($this->db->transStatus() === FALSE) {
+        $this->db->transRollback();
+        return redirect()->to('/admin')->with('error', 'Failed to delete service due to a database error.');
+    } else {
+        $this->db->transCommit();
+        return redirect()->to('/admin')->with('message', 'Service deleted successfully.');
+    }
+}
+
+
+
+
+    public function deleteFeedback($id)
+    {
+        if (!session()->get('is_admin')) {
+            return redirect()->to('/home/dashboard')->with('error', 'Access Denied');
+        }
+
+        if ($this->feedbackModel->find($id)) {
+            $this->feedbackModel->delete($id);
+            return redirect()->to('/admin')->with('message', 'Feedback deleted successfully.');
+        } else {
+            return redirect()->to('/admin')->with('error', 'Feedback not found.');
+        }
+    }
 }

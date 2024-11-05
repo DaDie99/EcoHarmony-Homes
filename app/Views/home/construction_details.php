@@ -1,6 +1,6 @@
 <div class="text-center">
     <h3><?= esc($service['title']) ?></h3>
-    <p><strong>Price:</strong><?= number_format($service['price'], 2) ?></p>
+    <p><strong>Price:Rs.</strong><?= number_format($service['price'], 2) ?></p>
     <p><strong>Contact Number:</strong> <?= esc($service['contact_number']) ?></p>
     <p><strong>Description:</strong> <?= esc($service['description']) ?></p>
     <a href="home/booknow" class="btn btn-info" role="button">Book Now</a>

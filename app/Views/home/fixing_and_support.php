@@ -81,8 +81,8 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><?= esc($service['title']) ?></h5>
-                                <p class="price">$<?= number_format($service['price'], 2) ?></p>
-                                <p><?= esc($service['description']) ?></p>
+                                <p class="price">Rs:<?= number_format($service['price'], 2) ?></p>
+                                <p>Details:<?= esc($service['description']) ?></p>
                                 <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $service['id'] ?>">View Details</a>
                             </div>
                         </div>

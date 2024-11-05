@@ -89,7 +89,8 @@
                     </div>
 
                     <h3><?= esc($property['title']) ?></h3>
-                    <p><?= esc($property['description']) ?></p>
+                    <p>Rs: <?= esc($property['price'])?></p>
+                    <p>Details:<?= esc($property['description']) ?></p>
                     <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $property['id'] ?>">View Details</a>
                 </div>
             <?php endforeach; ?>

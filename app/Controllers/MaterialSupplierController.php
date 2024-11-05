@@ -72,6 +72,7 @@ class MaterialSupplierController extends BaseController
             'price' => $service['price'] ?? 0,
             'rating' => $service['rating'] ?? 'Not rated',
             'description' => $service['description'] ?? 'No description available',
+            'contact_number' => $service['contact_number']??'N/A',
             'images' => json_decode($service['images'], true) ?? [] // Decode JSON images if available
         ];
 

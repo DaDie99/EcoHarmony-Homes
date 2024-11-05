@@ -62,6 +62,7 @@ class PropertyController extends BaseController
             $data = [
                 'title' => isset($property['title']) ? $property['title'] : 'N/A',
                 'price' => isset($property['price']) ? $property['price'] : 0,
+                'contact_number' => isset($property['contact_number'])? $property['contact_number'] : 'N/A',
                 'rating' => isset($property['rating']) ? $property['rating'] : 'Not rated',
                 'description' => isset($property['description']) ? $property['description'] : 'No description available',
                 'images' => isset($property['images']) ? json_decode($property['images'], true) : [] // Decoding images JSON if present

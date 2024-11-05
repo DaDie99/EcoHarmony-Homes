@@ -1,7 +1,6 @@
 <div class="text-center">
     <h2 class="mb-3"><?= esc($title) ?: 'Title not available' ?></h2>
     <p><strong>Price:</strong> $<?= isset($price) ? number_format($price, 2) : 'N/A' ?></p>
-    <p><strong>Rating:</strong> <i class="fa fa-star text-warning"></i> <?= isset($rating) ? esc($rating) : 'Not rated' ?> / 5</p>
     <p><strong>Description:</strong> <?= esc($description) ?: 'No description available' ?></p>
 
     <!-- Carousel for Supplier Images -->

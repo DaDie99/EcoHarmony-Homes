@@ -57,30 +57,67 @@
             color: #555;
         }
 
-        .feedback-item {
-            border: 1px solid #ddd;
+        .feedback-container {
+            max-width: 450px;
+            margin: auto;
             padding: 20px;
-            transition: transform 0.3s ease;
+            background: #f7f9fc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .feedback-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .feedback-item h4 {
+        .feedback-title {
+            font-size: 1.5rem;
+            font-weight: bold;
             color: #333;
-            font-weight: 600;
         }
 
-        .feedback-item p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            color: #666;
+        .feedback-form .feedback-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #555;
         }
 
-        .feedback-item i.fa-quote-left {
-            color: #ff6600;
+        .feedback-form .feedback-input {
+            font-size: 0.9rem;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s;
+        }
+
+        .feedback-form .feedback-input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+
+        .feedback-submit-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .feedback-submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 576px) {
+            .feedback-title {
+                font-size: 1.3rem;
+            }
+
+            .feedback-form .feedback-input {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>

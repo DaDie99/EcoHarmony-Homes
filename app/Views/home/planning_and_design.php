@@ -68,6 +68,13 @@
             background-color: #343a40;
             color: #fff;
         }
+        .display-4
+        {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
     </style>
 </head>
 
@@ -86,7 +93,6 @@
         <form class="filter-form">
             <label for="sortBy">Sort By:</label>
             <select id="sortBy" name="sortBy" onchange="applyFilter()">
-                <option value="rating">Rating: High to Low</option>
                 <option value="price_high">Price: High to Low</option>
                 <option value="price_low">Price: Low to High</option>
             </select>
@@ -130,7 +136,6 @@
                             <div class="details-container">
                                 <h3><?= esc($service['title']) ?></h3>
                                 <p class="price">$<?= number_format($service['price'], 2) ?></p>
-                                <p><i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
                                 <p><?= esc($service['description']) ?></p>
                                 <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $service['id'] ?>">View Details</a>
                             </div>

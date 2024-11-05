@@ -1,7 +1,6 @@
 <div class="text-center">
     <h3><?= esc($service['title']) ?></h3>
     <p><strong>Price:</strong> $<?= number_format($service['price'], 2) ?></p>
-    <p><strong>Rating:</strong> <i class="fa fa-star text-warning"></i> <?= esc($service['rating']) ?> / 5</p>
     <p><strong>Description:</strong> <?= esc($service['description']) ?></p>
 
     <!-- Image Carousel -->

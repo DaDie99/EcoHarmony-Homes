@@ -21,46 +21,12 @@
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
     <style>
-        /* Custom Styles */
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .bg-image {
-            background-image: url('path/to/your/background-image.jpg');
-            height: 300px;
-            background-size: cover;
-            position: relative;
-            color: #fff;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .h1
+        {
+            font-size: 50px;
             text-align: center;
-        }
-
-        .property-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .carousel-inner img {
-            border-radius: 10px;
-        }
-
-        .card-body {
-            text-align: center;
+            margin-bottom: 50px;
+            color: white;
         }
     </style>
 </head>
@@ -80,7 +46,6 @@
         <form class="filter-form">
             <label for="sortBy">Sort By:</label>
             <select id="sortBy" name="sortBy" onchange="applyFilter()">
-                <option value="rating">Rating: High to Low</option>
                 <option value="price_high">Price: High to Low</option>
                 <option value="price_low">Price: Low to High</option>
             </select>
@@ -89,56 +54,49 @@
     </div>
 
     <!-- Property List Section -->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="container properties-list">
-                <?php if (!empty($properties)): ?>
-                    <?php foreach ($properties as $property): ?>
-                        <div class="property-card">
-                            <?php
-                            // Decode images if stored as JSON
-                            $images = json_decode($property['images'], true);
-                            ?>
+    <div class="container properties-list">
+        <?php if (!empty($properties)): ?>
+            <?php foreach ($properties as $property): ?>
+                <div class="property-card">
+                    <?php
+                    // Decode images if stored as JSON
+                    $images = json_decode($property['images'], true);
+                    ?>
 
-                            <!-- Bootstrap Carousel for Images -->
-                            <div id="carousel<?= $property['id'] ?>" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <?php if (!empty($images)): ?>
-                                        <?php foreach ($images as $index => $image): ?>
-                                            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                                                <img src="<?= base_url('uploads/services/' . $image) ?>" alt="<?= esc($property['title']) ?>" class="d-block w-100" onerror="this.style.display='none'">
-                                            </div>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <div class="carousel-item active">
-                                            <img src="<?= base_url('uploads/services/default.jpg') ?>" alt="Default Image" class="d-block w-100"> <!-- Fallback image -->
-                                        </div>
-                                    <?php endif; ?>
+                    <!-- Bootstrap Carousel for Images -->
+                    <div id="carousel<?= $property['id'] ?>" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <?php if (!empty($images)): ?>
+                                <?php foreach ($images as $index => $image): ?>
+                                    <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                                        <img src="<?= base_url('uploads/services/' . $image) ?>" alt="<?= esc($property['title']) ?>" class="d-block w-100" onerror="this.style.display='none'">
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="carousel-item active">
+                                    <img src="<?= base_url('uploads/services/default.jpg') ?>" alt="Default Image" class="d-block w-100"> <!-- Fallback image -->
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?= $property['id'] ?>" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel<?= $property['id'] ?>" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-
-                            <h3><?= esc($property['title']) ?></h3>
-                            <p class="price">$<?= number_format($property['price'], 2) ?></p>
-                            <p><i class="fa fa-star text-warning"></i> <?= esc($property['rating']) ?> / 5</p>
-                            <p><?= esc($property['description']) ?></p>
-                            <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $property['id'] ?>">View Details</a>
+                            <?php endif; ?>
                         </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p>No properties found. Please adjust your filters.</p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?= $property['id'] ?>" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel<?= $property['id'] ?>" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
 
+                    <h3><?= esc($property['title']) ?></h3>
+                    <p><?= esc($property['description']) ?></p>
+                    <a href="javascript:void(0)" class="btn btn-primary view-details" data-id="<?= $property['id'] ?>">View Details</a>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No properties found. Please adjust your filters.</p>
+        <?php endif; ?>
+    </div>
 
     <!-- Property Details Modal -->
     <div class="modal fade" id="propertyDetailsModal" tabindex="-1" aria-labelledby="propertyDetailsLabel" aria-hidden="true">
@@ -163,11 +121,54 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Footer -->
+    <!--footer starts -->
     <footer class="footer bg-dark text-light py-5">
-        <!-- Footer Content Here -->
+        <div class="container">
+            <div class="row">
+                <!-- EcoHarmony Homes Description -->
+                <div class="col-md-4">
+                    <h5 class="text-orange">ECOHARMONY HOMES</h5>
+                    <p>Creating sustainable, eco-friendly homes with a modern touch. Our mission is to lead the way in environmentally responsible construction and innovative home solutions.</p>
+                    <div>
+                        <a href="#" class="text-light me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5 class="text-orange">QUICK LINKS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="<?= site_url('about') ?>" class="text-light">About Us</a></li>
+                        <li><a href="<?= site_url('projects') ?>" class="text-light">Projects</a></li>
+                        <li><a href="<?= site_url('services') ?>" class="text-light">Services</a></li>
+                        <li><a href="<?= site_url('contact') ?>" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Login/Register Section -->
+                <div class="col-md-4">
+                    <h5 class="text-orange">STAY CONNECTED</h5>
+                    <p>Connect with Our website for the latest updates on our services ,projects and sustainable building tips.</p>
+                    <div class="mt-3">
+                        <a href="<?= site_url('login') ?>" class="btn btn-outline-light me-2">Login</a>
+                        <a href="<?= site_url('register') ?>" class="btn btn-outline-light">Register</a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <!-- Copyright Notice -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; <span id="currentYear"></span> EcoHarmony Homes. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!--Footer End-->
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

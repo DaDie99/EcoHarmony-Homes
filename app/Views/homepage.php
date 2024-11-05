@@ -30,6 +30,25 @@
 
     <!-- Template Stylesheet -->
     <link href="assets\css\style.css" rel="stylesheet">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .card-text {
+            color: #555;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,7 +63,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <i class="fa fa-home fa-4x text-primary mb-4 d-none d-sm-block"></i>
                             <h1 class="display-2 text-uppercase text-white mb-md-4">Build Your Dream House With Our Services</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Find A service</a>
+                            <a href="<?= site_url('services') ?>" class="btn btn-primary py-md-3 px-md-5 mt-2">Find A service</a>
                         </div>
                     </div>
                 </div>
@@ -54,7 +73,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <i class="fa fa-tools fa-4x text-primary mb-4 d-none d-sm-block"></i>
                             <h1 class="display-2 text-uppercase text-white mb-md-4">We Are Trusted to Build your dream home with our services</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Find A service</a>
+                            <a href="<?= site_url('services') ?>" class="btn btn-primary py-md-3 px-md-5 mt-2">Find A service</a>
                         </div>
                     </div>
                 </div>
@@ -124,6 +143,7 @@
         </div>
     </div>
 
+    <hr>
     <!-- Featured Designs Section -->
     <div class="container mt-5">
         <h2 class="text-center">Featured Sustainable Designs</h2>
@@ -157,11 +177,9 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4">
-            <a href="portfolio.html" class="btn btn-primary">Explore More Designs</a>
-        </div>
-    </div>
 
+    </div>
+    <hr>
     <!-- About End -->
 
 
@@ -453,111 +471,33 @@
     <!-- Portfolio End -->
 
 
-    <!-- Team Start -->
-    <div class="container-fluid py-6 px-5">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 text-uppercase mb-4">We Are <span class="text-primary">Professional & Expert</span> Workers</h1>
-        </div>
-        <div class="row g-5">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="row g-0">
-                    <div class="col-10" style="min-height: 300px;">
-                        <div class="position-relative h-100">
-                            <img class="position-absolute w-100 h-100" src="img/team-1.jpg" style="object-fit: cover;">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
-                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-light p-4">
-                            <h4 class="text-uppercase">Adam Phillips</h4>
-                            <span>CEO & Founder</span>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Featured Projects</h2>
+
+        <div class="row">
+            <?php foreach ($randomProjects as $project): ?>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <?php
+                        // Decode the JSON-encoded images for the project
+                        $projectImages = json_decode($project['images'], true);
+                        $imagePath = !empty($projectImages) ? base_url('uploads/services/' . $projectImages[0]) : base_url('uploads/projects/default.jpg');
+                        ?>
+                        <img src="<?= $imagePath ?>" class="card-img-top" alt="<?= esc($project['title']) ?>">
+
+                        <div class="card-body">
+                            <h5 class="card-title"><?= esc($project['title']) ?></h5>
+                            <p class="card-text"><?= esc($project['description']) ?></p>
+                            <a  href="<?= site_url('projects') ?>" class="btn btn-primary">Projects</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="row g-0">
-                    <div class="col-10" style="min-height: 300px;">
-                        <div class="position-relative h-100">
-                            <img class="position-absolute w-100 h-100" src="img/team-2.jpg" style="object-fit: cover;">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
-                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-light p-4">
-                            <h4 class="text-uppercase">Dylan Adams</h4>
-                            <span>Civil Engineer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="row g-0">
-                    <div class="col-10" style="min-height: 300px;">
-                        <div class="position-relative h-100">
-                            <img class="position-absolute w-100 h-100" src="img/team-3.jpg" style="object-fit: cover;">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
-                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-light p-4">
-                            <h4 class="text-uppercase">Jhon Doe</h4>
-                            <span>Interior Designer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="row g-0">
-                    <div class="col-10" style="min-height: 300px;">
-                        <div class="position-relative h-100">
-                            <img class="position-absolute w-100 h-100" src="img/team-4.jpg" style="object-fit: cover;">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="h-100 d-flex flex-column align-items-center justify-content-between bg-light">
-                            <a class="btn" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-light p-4">
-                            <h4 class="text-uppercase">Josh Dunn</h4>
-                            <span>Painter</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
-    <!-- Team End -->
+
+
+
 
 
     <!-- Testimonial Start -->

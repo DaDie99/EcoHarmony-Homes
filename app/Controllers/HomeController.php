@@ -32,8 +32,12 @@ class HomeController extends BaseController
 
     public function index()
     {
-        // Load the homepage view
-        return view('homepage');
+        // Create an instance of ProjectsController to fetch random projects
+        $projectsController = new ProjectsController();
+        $randomProjects = $projectsController->getRandomProjects();
+
+        // Pass the random projects to the homepage view
+        return view('homepage', ['randomProjects' => $randomProjects]);
     }
 
     public function dashboard()

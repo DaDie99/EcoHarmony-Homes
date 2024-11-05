@@ -6,6 +6,12 @@ use App\Models\ProjectModel;
 
 class ProjectsController extends BaseController
 {
+    protected $projectModel;
+
+    public function __construct()
+    {
+        $this->projectModel = new ProjectModel();
+    }
     public function index()
     {
         // Load the ProjectModel
@@ -47,7 +53,7 @@ class ProjectsController extends BaseController
                 'images' => json_encode($images),
                 'user_id' => $user_id // Include user_id in the data
             ];
-    
+
 
             // Insert data into the database
             $model = new ProjectModel();
@@ -121,5 +127,15 @@ class ProjectsController extends BaseController
         } else {
             return json_encode(['error' => 'Project not found.']);
         }
+    }
+    public function getRandomProjects()
+    {
+        // Fetch 3 random projects from the database
+        $projects = $this->projectModel
+            ->orderBy('RAND()')  // Order by random
+            ->limit(3)           // Limit to 3 projects
+            ->findAll();
+
+        return $projects;
     }
 }

@@ -115,6 +115,16 @@ $routes->get('electrics/getServiceDetails/(:num)', 'ElectricsController::getServ
 $routes->get('dream-homes/getServiceDetails/(:num)', 'DreamHomesController::getServiceDetails/$1');
 
 
+$routes->get('homepage', 'FeedbackController::display');
+$routes->post('feedback/submit', 'FeedbackController::submit');
+$routes->get('/', 'FeedbackController::display');   // Route for displaying the homepage
+$routes->post('feedback/submit', 'FeedbackController::submit');  // Route for submitting feedback
+$routes->get('/', 'HomeController::index');  // Route for displaying the homepage with feedback
+
+
+
+$routes->get('/dashboard', 'HomeController::dashboard');  // Dashboard route
+
 
 
 

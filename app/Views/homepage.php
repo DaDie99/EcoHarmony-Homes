@@ -2,10 +2,18 @@
 
 <head>
     <meta charset="utf-8">
+    <base href="<?= base_url() ?>/">
     <title>EcoHarmony Homes</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 
     <!-- Favicon -->
     <link href="img/EcoHomes.ico" rel="icon">
@@ -47,6 +55,32 @@
 
         .card-text {
             color: #555;
+        }
+
+        .feedback-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .feedback-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feedback-item h4 {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .feedback-item p {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .feedback-item i.fa-quote-left {
+            color: #ff6600;
         }
     </style>
 </head>
@@ -361,7 +395,7 @@
         </div>
     </div>
     <!-- Services End -->
-<hr>
+    <hr>
     <!-- Portfolio Start -->
     <div class="container-fluid bg-light py-6 px-5">
         <div class="container mt-5">
@@ -393,52 +427,60 @@
     </div>
 
 
-<hr>
-
-    <!-- Testimonial Start -->
+    <hr>
+    <!-- User Feedback Section Start -->
     <div class="container-fluid bg-light py-6 px-5">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 text-uppercase mb-4">What Our <span class="text-primary">Happy Cleints</span> Say!!!</h1>
+            <h1 class="display-5 text-uppercase mb-4">What Our <span class="text-primary">Users</span> Say</h1>
         </div>
         <div class="row gx-0 align-items-center">
-            <div class="col-xl-4 col-lg-5 d-none d-lg-block">
-                <img class="img-fluid w-100 h-100" src="img/testimonial.jpg">
-            </div>
-            <div class="col-xl-8 col-lg-7 col-md-12">
-                <div class="testimonial bg-light">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="row gx-4 align-items-center">
-                            <div class="col-xl-4 col-lg-5 col-md-5">
-                                <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0" src="img/testimonial-1.jpg" alt="">
-                            </div>
-                            <div class="col-xl-8 col-lg-7 col-md-7">
-                                <h4 class="text-uppercase mb-0">Client Name</h4>
-                                <p>Profession</p>
-                                <p class="fs-5 mb-0"><i class="fa fa-2x fa-quote-left text-primary me-2"></i> Dolores sed duo
-                                    clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem
-                                    lorem magna ut labore et tempor diam tempor erat. Erat dolor rebum sit
-                                    ipsum.</p>
-                            </div>
-                        </div>
-                        <div class="row gx-4 align-items-center">
-                            <div class="col-xl-4 col-lg-5 col-md-5">
-                                <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0" src="img/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="col-xl-8 col-lg-7 col-md-7">
-                                <h4 class="text-uppercase mb-0">Client Name</h4>
-                                <p>Profession</p>
-                                <p class="fs-5 mb-0"><i class="fa fa-2x fa-quote-left text-primary me-2"></i> Dolores sed duo
-                                    clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem
-                                    lorem magna ut labore et tempor diam tempor erat. Erat dolor rebum sit
-                                    ipsum.</p>
-                            </div>
-                        </div>
+            <div class="col-12">
+                <div class="feedback bg-light">
+                    <div class="owl-carousel feedback-carousel">
+                        <?php if (!empty($feedbacks)): ?>
+                            <?php foreach ($feedbacks as $feedback): ?>
+                                <div class="feedback-item text-center bg-white p-4 rounded shadow-sm m-2">
+                                    <h4 class="text-uppercase mb-2"><?= esc($feedback['name']) ?></h4>
+                                    <p class="fs-5 text-muted mb-3">
+                                        <i class="fa fa-2x fa-quote-left text-primary me-2"></i>
+                                        <?= esc($feedback['feedback']) ?>
+                                    </p>
+                                    <small class="text-muted"><?= date('F j, Y', strtotime($feedback['created_at'])) ?></small>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <p class="text-center">No feedback available at this time.</p>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- User Feedback Section End -->
+
+
+    <!-- Feedback Form Start -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Leave Your Feedback</h2>
+        <form action="<?= site_url('feedback/submit') ?>" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="feedback" class="form-label">Your Feedback</label>
+                <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+        </form>
+    </div>
+    <!-- Feedback Form End -->
+
+
+
+
+
+
 
 
 
@@ -496,6 +538,37 @@
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
+    <script>
+        $(document).ready(function() {
+            $('.feedback-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+
+
+
+
 
 
 
@@ -507,6 +580,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>

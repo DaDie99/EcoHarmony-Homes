@@ -3,10 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\ServiceModel;
+use App\Models\FeedbackModel;
+use App\Models\ProjectModel;
 
 class HomeController extends BaseController
 {
-    // Service mapping array
     private $serviceMapping = [
         1 => 'Property',
         2 => 'Material Supplier',
@@ -23,22 +24,32 @@ class HomeController extends BaseController
     ];
 
     protected $serviceModel;
+    protected $feedbackModel;
+    protected $projectModel;
 
     public function __construct()
     {
-        // Load the ServiceModel
+        // Load models
         $this->serviceModel = new ServiceModel();
+        $this->feedbackModel = new FeedbackModel();
+        $this->projectModel = new ProjectModel();
     }
 
     public function index()
     {
-        // Create an instance of ProjectsController to fetch random projects
-        $projectsController = new ProjectsController();
-        $randomProjects = $projectsController->getRandomProjects();
+        // Fetch 3 random projects directly from the ProjectModel
+        $randomProjects = $this->projectModel->orderBy('RAND()')->findAll(3);
 
-        // Pass the random projects to the homepage view
-        return view('homepage', ['randomProjects' => $randomProjects]);
+        // Fetch the latest 5 feedback entries
+        $feedbacks = $this->feedbackModel->orderBy('created_at', 'DESC')->findAll(5);
+
+        // Pass both random projects and feedbacks to the homepage view
+        return view('homepage', [
+            'randomProjects' => $randomProjects,
+            'feedbacks' => $feedbacks,
+        ]);
     }
+
 
     public function dashboard()
     {

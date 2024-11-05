@@ -8,6 +8,7 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
+use App\Filters\AuthFilter; // Import your custom AuthFilter
 
 class Filters extends BaseConfig
 {
@@ -24,6 +25,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'auth'          => AuthFilter::class, // Register the auth filter alias
     ];
 
     /**
@@ -46,28 +48,12 @@ class Filters extends BaseConfig
     ];
 
     /**
-     * List of filter aliases that works on a
-     * particular HTTP method (GET, POST, etc.).
-     *
-     * Example:
-     * 'post' => ['foo', 'bar']
-     *
-     * If you use this, you should disable auto-routing because auto-routing
-     * permits any HTTP method to access a controller. Accessing the controller
-     * with a method you don't expect could bypass the filter.
-     *
-     * @var array<string, list<string>>
-     */
-    public array $methods = [];
-
-    /**
      * List of filter aliases that should run on any
      * before or after URI patterns.
      *
-     * Example:
-     * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
-     *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'auth' => ['before' => ['admin/*', 'home/dashboard', 'home/settings']], // Apply 'auth' filter to protected routes
+    ];
 }

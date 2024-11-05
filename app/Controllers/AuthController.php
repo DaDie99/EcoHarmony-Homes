@@ -24,23 +24,32 @@ class AuthController extends Controller
         $user = $model->where('email', $email)->first();
     
         if ($user && password_verify($password, $user['password'])) {
-            // Set session data
+            // Set session data based on role
             $sessionData = [
                 'user_id' => $user['user_id'],
-                'ownerName' => $user['ownerName'], // Assuming you want to show this on the dashboard
+                'ownerName' => $user['ownerName'],
                 'email' => $user['email'],
-                'logged_in' => true
+                'logged_in' => true,
             ];
+
+            // Check if the user is an admin and set additional session flag
+            if ($user['role'] === 'admin') {
+                $sessionData['is_admin'] = true;
+            }
+
             session()->set($sessionData);
     
-            // Redirect to the dashboard
-            return redirect()->to('/home/dashboard');
+            // Redirect based on role
+            if ($user['role'] === 'admin') {
+                return redirect()->to('/admin'); // Redirect to admin dashboard
+            } else {
+                return redirect()->to('/home/dashboard'); // Redirect to user dashboard
+            }
         } else {
             // Authentication failed, redirect back with an error
             return redirect()->back()->with('error', 'Invalid email or password.');
         }
     }
-    
 
     // Logout method
     public function logout()
@@ -79,7 +88,9 @@ class AuthController extends Controller
             'contactNumber' => htmlspecialchars($this->request->getPost('contactNumber')),
             'email' => $email,
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            'service' => (int)$this->request->getPost('service')
+            'service' => (int)$this->request->getPost('service'),
+            // Assign role (e.g., 'user' by default)
+            'role' => 'user',
         ];
 
         // Insert user data into the database

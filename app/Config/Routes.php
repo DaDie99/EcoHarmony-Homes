@@ -126,8 +126,17 @@ $routes->get('/', 'HomeController::index');  // Route for displaying the homepag
 $routes->get('/dashboard', 'HomeController::dashboard');  // Dashboard route
 
 
+$routes->get('/admin', 'AdminController::index', ['filter' => 'auth']);
+$routes->get('/admin/deleteUser/(:num)', 'AdminController::deleteUser/$1', ['filter' => 'auth']);
+$routes->get('/admin/deleteProject/(:num)', 'AdminController::deleteProject/$1', ['filter' => 'auth']);
 
 
+
+$routes->group('', ['filter' => 'auth'], function($routes) {
+    $routes->get('/home/dashboard', 'HomeController::dashboard');
+    $routes->get('/admin', 'AdminController::index');
+    // Add other protected routes here
+});
 
 
 

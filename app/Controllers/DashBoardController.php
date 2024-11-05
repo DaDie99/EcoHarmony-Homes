@@ -55,6 +55,7 @@ class DashboardController extends BaseController
 
         $model = new UserModel();
         if ($model->update($user['user_id'], $data)) {
+            // Update session data with new user details
             $user['companyName'] = $data['companyName'];
             $user['contactNumber'] = $data['contactNumber'];
             session()->set('user_data', $user);
@@ -68,16 +69,33 @@ class DashboardController extends BaseController
     public function addService()
     {
         $user = session()->get('user_data');
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'Please log in first.');
+        }
+
         $selectedServices = $this->request->getPost('services');
+        $serviceModel = new ServiceModel();
 
-        $model = new UserModel();
-        $model->update($user['user_id'], [
+        // Check if the user already has a service entry to enforce uniqueness
+        $existingService = $serviceModel->where('user_id', $user['user_id'])->first();
+        if ($existingService) {
+            return redirect()->back()->with('error', 'You can only have one service. Update the existing service if needed.');
+        }
+
+        // Insert new service(s) if no existing service for the user
+        $serviceData = [
+            'user_id' => $user['user_id'],
             'service' => implode(',', $selectedServices)
-        ]);
+        ];
 
-        $user['service'] = implode(',', $selectedServices);
-        session()->set('user_data', $user);
+        if ($serviceModel->insert($serviceData)) {
+            // Update session with the selected services
+            $user['service'] = implode(',', $selectedServices);
+            session()->set('user_data', $user);
 
-        return redirect()->to('/home/dashboard')->with('message', 'Services updated successfully.');
+            return redirect()->to('/home/dashboard')->with('message', 'Services added successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to add services.');
+        }
     }
 }

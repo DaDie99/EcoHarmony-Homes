@@ -3,6 +3,7 @@
     <p><strong>Price:</strong> <?= isset($price) ? number_format($price, 2) : 'N/A' ?></p>
     <p><strong>Contact Number:</strong> <?= esc($contact_number) ? : 'N/A' ?></p>
     <p><strong>Description:</strong> <?= esc($description) ?: 'No description available' ?></p>
+    <a href="home/booknow" class="btn btn-info" role="button">Book Now</a>
 
     <!-- Carousel for Supplier Images -->
     <div id="carouselSupplierImages" class="carousel slide mt-4" data-bs-ride="carousel">

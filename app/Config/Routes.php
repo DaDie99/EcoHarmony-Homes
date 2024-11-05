@@ -142,6 +142,8 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
 });
 
 $routes->get('admin/deleteService/(:num)', 'AdminController::deleteService/$1');
+$routes->get('home/booknow', 'BookingController::booknow');
+$routes->post('booknow/submit', 'BookingController::submitBooking');
 
 
 
